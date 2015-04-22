@@ -1,0 +1,12 @@
+FROM debian:stretch
+
+RUN apt-get -y update && apt-get -y install binutils make python clang-3.6 libc++-dev git && apt-get -y clean
+
+# Obtain a copy of BDE Tools, and ensure it is included in PATH
+RUN git clone https://github.com/bloomberg/bde-tools /opt/bb/bde-tools
+ENV PATH /opt/bb/bde-tools/bin:$PATH
+
+# Using Clang/LLVM link-time optimization requires the use of the 'gold' linker,
+# and Debian does not provide a configurable 'alternative' to select it as the
+# system linker, so the symlink in /usr/bin must be replaced to activate it.
+RUN ln -sf /usr/bin/ld.gold /usr/bin/ld

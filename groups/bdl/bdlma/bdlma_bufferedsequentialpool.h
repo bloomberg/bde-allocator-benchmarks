@@ -465,6 +465,8 @@ class BufferedSequentialPool {
         // memory obtained from the allocator supplied at construction.  The
         // behavior is undefined unless '0 < size'.
 
+    void deallocate(void*) {}
+
     template <class TYPE>
     void deleteObjectRaw(const TYPE *object);
         // Destroy the specified 'object'.  Note that memory associated with

@@ -761,6 +761,21 @@ int Multipool::maxPooledBlockSize() const
 }  // close package namespace
 }  // close enterprise namespace
 
+// FREE OPERATORS
+inline
+void *operator new(bsl::size_t                                 size,
+                   BloombergLP::bdlma::Multipool& pool)
+{
+        return pool.allocate(size);
+}
+
+inline
+void operator delete(void* p, BloombergLP::bdlma::Multipool& pool)
+{
+        pool.deallocate(p);
+}
+
+
 #endif
 
 // ----------------------------------------------------------------------------
