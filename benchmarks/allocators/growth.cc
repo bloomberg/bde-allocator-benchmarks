@@ -233,12 +233,12 @@ double measure(int mask, bool csv, double reference, Test test)
 
 template <typename T>
 struct my_hash {
-    unsigned long operator()(T const& t)
+    unsigned long operator()(T const& t) const
         { return 1048583 * (1 + reinterpret_cast<unsigned long>(&t)); }
 };
 template <typename T>
 struct my_equal {
-    bool operator()(T const& t, T const& u)
+    bool operator()(T const& t, T const& u) const
         { return &t == &u; }
 };
 
