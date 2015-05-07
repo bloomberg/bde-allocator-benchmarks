@@ -231,9 +231,25 @@ double measure(int mask, bool csv, double reference, Test test)
     return ((mask & (SA|CT)) == (SA|CT)) ? result_time : reference;
 }
 
+#ifdef __GLIBCXX__
+namespace std {
+  template<typename C, typename T, typename A>
+    struct hash<basic_string<C, T, A>>
+    {
+      using result_type = size_t;
+      using argument_type = basic_string<C, T, A>;
+
+      result_type operator()(const argument_type& s) const noexcept
+      { return std::_Hash_impl::hash(s.data(), s.length()); }
+    };
+}
+#endif
+
 template <typename T>
 struct my_hash {
-    unsigned long operator()(T const& t) const
+    using result_type = size_t;
+    using argument_type = T;
+    result_type operator()(T const& t) const
         { return 1048583 * (1 + reinterpret_cast<unsigned long>(&t)); }
 };
 template <typename T>
