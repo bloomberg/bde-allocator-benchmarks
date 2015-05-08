@@ -15,7 +15,7 @@ These programs depend upon:
     custom build system based on [waf](https://github.com/waf-project/waf)
   * If building for LTO, /usr/bin/ld indicating ld.gold
 
-A suitably-configured system can be built quickly using 
+A suitably-configured system can be built quickly using
 [Docker](https://docker.com); see the 'Docker' section below for instructions.
 
 This repository contains a snapshot of the BDE library patched to make use
