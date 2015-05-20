@@ -1,9 +1,9 @@
 # You may need to set the following variables:
 #
-# CXX      - path to Clang++ 3.6
-# CC       - path to Clang 3.6
-# AR       - path to LLVM's 'ar' tool
-# RANLIB   - path to LLVM's 'ranlib' tool
+# CXX      - path to C++ compiler
+# CC       - path to C compiler
+# AR       - path to suitable 'ar' tool
+# RANLIB   - path to suitable 'ranlib' tool
 # BDEWAF   - path to 'waf' from BDE Tools (https://github.com/bloomberg/bde-tools)
 
 CXX = clang++-3.6
@@ -26,10 +26,12 @@ BDLINC = $(INST)/include/bdl
 BSLLIB = $(BSLSRC)/build/groups/bsl
 BDLLIB = $(BSLSRC)/build/groups/bdl
 
+# comment this out for gcc-5:
 STDLIB = -stdlib=libc++
-# If libc++ was built from source (not installed from a system package), then libc++abi may not
-# have been linked into libc++. In this situation, the linker must explicitly be told to include
-# it in the link, by uncommenting the line below.
+# If libc++ was built from source (not installed from a system package),
+# then libc++abi may not have been linked into libc++. In this situation, the
+# linker must be explicitly told to include it in the link, by uncommenting
+# the line below.
 #STDLIBABI = -lc++abi
 
 INCLUDES = \

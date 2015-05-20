@@ -22,6 +22,8 @@
 template <typename T, typename Pool>
 struct pool_adaptor {
     typedef T value_type;
+    typedef T& reference;
+    typedef T const& const_reference;
     Pool* pool;
     pool_adaptor() : pool(nullptr) {}
     pool_adaptor(Pool* poo) : pool(poo) {}
