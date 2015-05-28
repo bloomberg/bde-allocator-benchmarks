@@ -114,7 +114,7 @@ zation: zation.cc
 tention: tention.cc
 	$(CXX) -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
 
-run: run-growth run-locality run-zation run-tention
+run: run-locality run-zation run-tention run-growth run-shuffle run-schedule
 
 run-growth: growth
 	@echo With GROWTH_SIZE 20 this may take a full day to complete:
