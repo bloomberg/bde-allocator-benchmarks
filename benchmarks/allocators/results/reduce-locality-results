@@ -2,7 +2,7 @@
 
 fgrep -v '*' locality-result | grep . | (
   for as in 01 07 09 13; do
-    for arg1 in 04 17; do 
+    for arg1 in 04 17; do
       for arg2 in 1 2; do
         for arg3 in 1 2; do
           for arg4 in 0 1; do
@@ -29,7 +29,7 @@ fgrep -v '*' locality-result | grep . | (
   echo -n ", multipool abstract base (AS9)"
   echo ", monotonic (multipool) abstract base (AS13)"
   reftime=1.0
-  while read key arg1 arg2 arg3 arg4 arg5 time; do 
+  while read key arg1 arg2 arg3 arg4 arg5 time; do
     case "$key" in
       (*01) reftime=$time
             echo -n "$arg1 $arg2 $arg3 $arg4 $arg5, ${time}s, "

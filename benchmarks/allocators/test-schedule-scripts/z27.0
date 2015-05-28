@@ -1,0 +1,150 @@
+# Problem size = 2^27
+# Read factor * iterations = 256.
+# Iterations = 1
+# Churn percentage = 500%
+#
+
+
+
+
+time  ../../locality-AS1   -27    27   0   +5  1
+time  ../../locality-AS1   -27    27     256   +5  1
+time  ../../locality-AS1   -27    27   0   -5  1
+time  ../../locality-AS1   -27    27     256   -5  1
+
+time  ../../locality-AS1   -27    26   0   +5  1
+time  ../../locality-AS1   -27    26     256   +5  1
+time  ../../locality-AS1   -27    26   0   -5  1
+time  ../../locality-AS1   -27    26     256   -5  1
+
+time  ../../locality-AS1   -27    25   0   +5  1
+time  ../../locality-AS1   -27    25     256   +5  1
+time  ../../locality-AS1   -27    25   0   -5  1
+time  ../../locality-AS1   -27    25     256   -5  1
+
+time  ../../locality-AS1   -27    24   0   +5  1
+time  ../../locality-AS1   -27    24     256   +5  1
+time  ../../locality-AS1   -27    24   0   -5  1
+time  ../../locality-AS1   -27    24     256   -5  1
+
+time  ../../locality-AS1   -27    23   0   +5  1
+time  ../../locality-AS1   -27    23     256   +5  1
+time  ../../locality-AS1   -27    23   0   -5  1
+time  ../../locality-AS1   -27    23     256   -5  1
+
+time  ../../locality-AS1   -27    22   0   +5  1
+time  ../../locality-AS1   -27    22     256   +5  1
+time  ../../locality-AS1   -27    22   0   -5  1
+time  ../../locality-AS1   -27    22     256   -5  1
+
+time  ../../locality-AS1   -27    21   0   +5  1
+time  ../../locality-AS1   -27    21     256   +5  1
+time  ../../locality-AS1   -27    21   0   -5  1
+time  ../../locality-AS1   -27    21     256   -5  1
+
+time  ../../locality-AS1   -27    20   0   +5  1
+time  ../../locality-AS1   -27    20     256   +5  1
+time  ../../locality-AS1   -27    20   0   -5  1
+time  ../../locality-AS1   -27    20     256   -5  1
+
+time  ../../locality-AS1   -27    19   0   +5  1
+time  ../../locality-AS1   -27    19     256   +5  1
+time  ../../locality-AS1   -27    19   0   -5  1
+time  ../../locality-AS1   -27    19     256   -5  1
+
+time  ../../locality-AS1   -27    18   0   +5  1
+time  ../../locality-AS1   -27    18     256   +5  1
+time  ../../locality-AS1   -27    18   0   -5  1
+time  ../../locality-AS1   -27    18     256   -5  1
+
+time  ../../locality-AS1   -27    17   0   +5  1
+time  ../../locality-AS1   -27    17     256   +5  1
+time  ../../locality-AS1   -27    17   0   -5  1
+time  ../../locality-AS1   -27    17     256   -5  1
+
+time  ../../locality-AS1   -27    16   0   +5  1
+time  ../../locality-AS1   -27    16     256   +5  1
+time  ../../locality-AS1   -27    16   0   -5  1
+time  ../../locality-AS1   -27    16     256   -5  1
+
+time  ../../locality-AS1   -27    15   0   +5  1
+time  ../../locality-AS1   -27    15     256   +5  1
+time  ../../locality-AS1   -27    15   0   -5  1
+time  ../../locality-AS1   -27    15     256   -5  1
+
+time  ../../locality-AS1   -27    14   0   +5  1
+time  ../../locality-AS1   -27    14     256   +5  1
+time  ../../locality-AS1   -27    14   0   -5  1
+time  ../../locality-AS1   -27    14     256   -5  1
+
+time  ../../locality-AS1   -27    13   0   +5  1
+time  ../../locality-AS1   -27    13     256   +5  1
+time  ../../locality-AS1   -27    13   0   -5  1
+time  ../../locality-AS1   -27    13     256   -5  1
+
+time  ../../locality-AS1   -27    12   0   +5  1
+time  ../../locality-AS1   -27    12     256   +5  1
+time  ../../locality-AS1   -27    12   0   -5  1
+time  ../../locality-AS1   -27    12     256   -5  1
+
+time  ../../locality-AS1   -27    11   0   +5  1
+time  ../../locality-AS1   -27    11     256   +5  1
+time  ../../locality-AS1   -27    11   0   -5  1
+time  ../../locality-AS1   -27    11     256   -5  1
+
+time  ../../locality-AS1   -27    10   0   +5  1
+time  ../../locality-AS1   -27    10     256   +5  1
+time  ../../locality-AS1   -27    10   0   -5  1
+time  ../../locality-AS1   -27    10     256   -5  1
+
+time  ../../locality-AS1   -27     9   0   +5  1
+time  ../../locality-AS1   -27     9     256   +5  1
+time  ../../locality-AS1   -27     9   0   -5  1
+time  ../../locality-AS1   -27     9     256   -5  1
+
+time  ../../locality-AS1   -27     8   0   +5  1
+time  ../../locality-AS1   -27     8     256   +5  1
+time  ../../locality-AS1   -27     8   0   -5  1
+time  ../../locality-AS1   -27     8     256   -5  1
+
+time  ../../locality-AS1   -27     7   0   +5  1
+time  ../../locality-AS1   -27     7     256   +5  1
+time  ../../locality-AS1   -27     7   0   -5  1
+time  ../../locality-AS1   -27     7     256   -5  1
+
+time  ../../locality-AS1   -27     6   0   +5  1
+time  ../../locality-AS1   -27     6     256   +5  1
+time  ../../locality-AS1   -27     6   0   -5  1
+time  ../../locality-AS1   -27     6     256   -5  1
+
+time  ../../locality-AS1   -27     5   0   +5  1
+time  ../../locality-AS1   -27     5     256   +5  1
+time  ../../locality-AS1   -27     5   0   -5  1
+time  ../../locality-AS1   -27     5     256   -5  1
+
+time  ../../locality-AS1   -27     4   0   +5  1
+time  ../../locality-AS1   -27     4     256   +5  1
+time  ../../locality-AS1   -27     4   0   -5  1
+time  ../../locality-AS1   -27     4     256   -5  1
+
+time  ../../locality-AS1   -27     3   0   +5  1
+time  ../../locality-AS1   -27     3     256   +5  1
+time  ../../locality-AS1   -27     3   0   -5  1
+time  ../../locality-AS1   -27     3     256   -5  1
+
+time  ../../locality-AS1   -27     2   0   +5  1
+time  ../../locality-AS1   -27     2     256   +5  1
+time  ../../locality-AS1   -27     2   0   -5  1
+time  ../../locality-AS1   -27     2     256   -5  1
+
+time  ../../locality-AS1   -27     1   0   +5  1
+time  ../../locality-AS1   -27     1     256   +5  1
+time  ../../locality-AS1   -27     1   0   -5  1
+time  ../../locality-AS1   -27     1     256   -5  1
+
+time  ../../locality-AS1   -27     0   0   +5  1
+time  ../../locality-AS1   -27     0     256   +5  1
+time  ../../locality-AS1   -27     0   0   -5  1
+time  ../../locality-AS1   -27     0     256   -5  1
+
+

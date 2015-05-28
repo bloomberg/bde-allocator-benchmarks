@@ -1,10 +1,13 @@
 # You may need to set the following variables:
 #
-# CXX      - path to C++ compiler
-# CC       - path to C compiler
-# AR       - path to suitable 'ar' tool
-# RANLIB   - path to suitable 'ranlib' tool
-# BDEWAF   - path to 'waf' from BDE Tools (https://github.com/bloomberg/bde-tools)
+# CXX    - path to C++ compiler
+# CC     - path to C compiler
+# AR     - path to suitable 'ar' tool
+# RANLIB - path to suitable 'ranlib' tool
+# BDEWAF - path to 'waf' in BDE Tools (https://github.com/bloomberg/bde-tools)
+#
+# They may be overridden on the command line, e.g. for gcc 5.1 on 4 cores:
+# $ make CXX=g++ CC=gcc BDEWAF=$HOME/bde-tools/bin/waf STDLIB= PARALLEL=-j4
 
 CXX = clang++-3.6
 CC = clang-3.6
@@ -40,6 +43,9 @@ INCLUDES = \
    -I$(BDL)/bdlscm -I$(BDL)/bdlma
 
 DEFS = -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS -DBSLS_IDENT_OFF
+WAFCONFIGARGS = \
+    --abi-bits=64 --cpp11 --build-type release \
+    --assert-level=none $(PARALLEL) 
 
 LIBS = \
    -Wl,-Bstatic \
@@ -63,13 +69,17 @@ build: $(BINARIES)
 
 $(BINARIES): bde-tag
 
-OUTPUT =  *-result growth-*-*
+OUTPUT =  results/*-result results/growth-*-* \
+    results/shuffle results/schedule
 
 clean:
-	rm -rf $(BINARIES) $(OUTPUT) bde-tag $(BSLSRC)/build
+	rm -rf $(BINARIES) bde-tag $(BSLSRC)/build growth-*-* *-result
+
+reallyclean: clean
+	rm -rf $(OUTPUT)
 
 bde-tag: Makefile
-	@( \
+	( \
 	cd $(BSLSRC) && \
 	export CC='$(CC)' && \
 	export CXX='$(CXX)' && \
@@ -77,7 +87,7 @@ bde-tag: Makefile
 	export RANLIB='$(RANLIB)' && \
 	export CFLAGS='$(CFLAGS_BDE)' && \
 	export CXXFLAGS='$(CXXFLAGS_BDE)' && \
-	$(BDEWAF) configure --abi-bits=64 --cpp11 --build-type release --assert-level=none $(PARALLEL) && \
+	$(BDEWAF) configure $(WAFCONFIGARGS) && \
 	$(BDEWAF) build -v \
 	)
 	touch bde-tag
@@ -107,9 +117,13 @@ tention: tention.cc
 run: run-growth run-locality run-zation run-tention
 
 run-growth: growth
-	@echo \"test-growth 20\" may take a full day to complete:
-	./test-growth $(GROWTH_SIZE)
-	cat growth-*-* >growth-result
+	@echo With GROWTH_SIZE 20 this may take a full day to complete:
+	for i in 04 05 06 07 08 09 10 11 12 13 14 15 16; do \
+        echo ./growth $(GROWTH_SIZE) $i - \
+        (cd results; ./growth $(GROWTH_SIZE) $i - ) \
+    done
+	(cd results; cat growth-$(GROWTH_SIZE)-* >results/growth-result )
+	(cd results; ./reduce-growth-results; rm T*; )
 
 run-locality: locality-AS1 locality-AS7 locality-AS9 locality-AS13
 	@( \
@@ -121,10 +135,31 @@ run-locality: locality-AS1 locality-AS7 locality-AS9 locality-AS13
 	./test-locality ./locality-AS9 2>&1; \
 	echo "********** using AS13 polymorphic multipool backed by monotonic:"; \
 	./test-locality ./locality-AS13 2>&1; \
-	) | tee locality-result
+	) | tee >results/locality-result
+	(cd results; ./reduce-locality-results)
+
+run-shuffle: locality-AS1
+	( \
+    mkdir -p results/shuffle && cd results/shuffle && \
+    for i in ../../test-shuffle-scripts/s*; do \
+        o=$${i##*/} ; \
+        $$i  2>&1 | tee o$${o%%_*} ; \
+    done ; \
+    )
+
+run-schedule: locality-AS1
+	( \
+    mkdir -p results/schedule && cd results/schedule && \
+    for i in ../../test-schedule-scripts/z*; do \
+        o=$${i##*/} ; \
+        $$i 2>&1 | tee o$${o} ; \
+    done ; \
+    )
 
 run-zation: zation
 	time ./test-zation | tee zation-result
+	mv zation-result results/
 
 run-tention: tention
 	time ./test-tention | tee tention-result
+	mv tention-result results/

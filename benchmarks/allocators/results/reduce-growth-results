@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for F in growth-*-*; do grep -h . $F | (
+grep . < growth-results | (
   F1=${F#growth-}; X=${F1%-*}; N=${F#growth-??-};
   for S in V- H- VV VH HV HH; do for P in I S; do for B in C R;
   do for M in ND PD PL MD ML XD XL; do read i; echo "$X$N$S$P$B$M, $i";
