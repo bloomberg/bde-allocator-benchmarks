@@ -32,10 +32,10 @@ fgrep -v '*' locality-result | grep . | (
   while read key arg1 arg2 arg3 arg4 arg5 time; do
     case "$key" in
       (*01) reftime=$time
-            echo -n "$arg1 $arg2 $arg3 $arg4 $arg5, ${time}s, "
+            echo -n "$arg1 $arg2 $arg3 $arg4 $arg5, ${time}s"
             ;;
       (*)   reltime=`echo "scale=1; 100*$time/$reftime" | bc`
-            printf "%ss (%.0f%%), " "$time" "$reltime"
+            printf ", %ss (%.0f%%)" "$time" "$reltime"
             ;;
     esac
     case "$key" in

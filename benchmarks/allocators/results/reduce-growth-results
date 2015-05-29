@@ -1,10 +1,10 @@
 #!/bin/bash
 
-grep . < growth-results | (
+for F in growth-*-*; do grep -h . $F | (
   F1=${F#growth-}; X=${F1%-*}; N=${F#growth-??-};
   for S in V- H- VV VH HV HH; do for P in I S; do for B in C R;
   do for M in ND PD PL MD ML XD XL; do read i; echo "$X$N$S$P$B$M, $i";
-  done; done; done; done; ) done >T
+  done; done; done; done; ); done >T
 
 for i in V- H- VV VH HV HH; do for j in I S; do grep "^....$i$j" T >T-$i$j; done; done
 
@@ -27,8 +27,8 @@ for i in T-???; do
           sz=${ix%??}
           sz=${sz#0}  # row heading
           case "$tag" in
-              (*CND*) echo -n "$sz, [${time%,}s], ";;
-              (*) r=${rel%%%,}; echo -n "${r%.*}, ";;
+              (*CND*) echo -n "$sz, [${time%,}s]";;
+              (*) r=${rel%%%,}; echo -n ", ${r%.*}";;
           esac;
           case "$tag" in
             (*RXL*) echo;
@@ -79,9 +79,9 @@ for i in T-???; do
           sz=${ix%??}
           sz=${sz#0}
           case "$tag" in
-              (*CND*) echo -n "$sz, ";;
+              (*CND*) echo -n "$sz";;
           esac;
-          echo -n $time
+          echo -n ", ${time%,*}"
           case "$tag" in
             (*RXL*) echo;
           esac
