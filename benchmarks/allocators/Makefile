@@ -119,9 +119,9 @@ run: run-locality run-zation run-tention run-growth run-shuffle run-schedule
 run-growth: growth
 	@echo With GROWTH_SIZE 20 this may take a full day to complete:
 	for i in 04 05 06 07 08 09 10 11 12 13 14 15 16; do \
-        echo ./growth $(GROWTH_SIZE) $i - \
-        (cd results; ./growth $(GROWTH_SIZE) $i - ) \
-    done
+           echo ./growth $(GROWTH_SIZE) $$i - \
+           (cd results; ../growth $(GROWTH_SIZE) $$i - | tee "growth-$(GROWTH_SIZE)-$$i) \
+        done
 	(cd results; cat growth-$(GROWTH_SIZE)-* >results/growth-result )
 	(cd results; ./reduce-growth-results; rm T*; )
 
