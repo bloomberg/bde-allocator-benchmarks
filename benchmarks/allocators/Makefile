@@ -9,10 +9,10 @@
 # They may be overridden on the command line, e.g. for gcc 5.1 on 4 cores:
 # $ make CXX=g++ CC=gcc BDEWAF=$HOME/bde-tools/bin/waf STDLIB= PARALLEL=-j4
 
-CXX = clang++-3.6
-CC = clang-3.6
-AR = llvm-ar-3.6
-RANLIB = llvm-ranlib-3.6
+CXX = g++
+CC = gcc
+AR = gcc-ar
+RANLIB = gcc-ranlib
 BDEWAF = waf
 
 OPTIM = -O -DBSLS_ASSERT_LEVEL_NONE
@@ -30,7 +30,7 @@ BSLLIB = $(BSLSRC)/build/groups/bsl
 BDLLIB = $(BSLSRC)/build/groups/bdl
 
 # comment this out for gcc-5:
-STDLIB = -stdlib=libc++
+# STDLIB = -stdlib=libc++
 # If libc++ was built from source (not installed from a system package),
 # then libc++abi may not have been linked into libc++. In this situation, the
 # linker must be explicitly told to include it in the link, by uncommenting
@@ -55,7 +55,7 @@ LIBS = \
    -lpthread
 
 CFLAGS_BDE = $(DEBUG) $(OPTIM) $(LTO) $(DEFS) $(CFLAGS) -std=c99
-CXXFLAGS_BDE = $(DEBUG) $(OPTIM) $(LTO) $(DEFS) $(STDLIB)
+CXXFLAGS_BDE = $(DEBUG) $(OPTIM) $(LTO) $(DEFS) $(STDLIB) -D__linux
 CXXFLAGS_LOCAL = $(CXXFLAGS_BDE) -std=c++14 $(INCLUDES) $(CXXFLAGS)
 LDFLAGS_LOCAL = $(LIBS) $(LDFLAGS)
 
