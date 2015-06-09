@@ -19,16 +19,6 @@ SequentialAllocator::~SequentialAllocator()
 }
 
 // MANIPULATORS
-void *SequentialAllocator::allocate(size_type size)
-{
-    if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(0 == size)) {
-        BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        return 0;                                                     // RETURN
-    }
-
-    return d_sequentialPool.allocate(size);
-}
-
 void *SequentialAllocator::allocateAndExpand(size_type *size)
 {
     BSLS_ASSERT(size);

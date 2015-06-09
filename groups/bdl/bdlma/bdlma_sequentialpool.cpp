@@ -224,17 +224,8 @@ SequentialPool(int                          initialSize,
 }
 
 // MANIPULATORS
-void *SequentialPool::allocate(bsls::Types::size_type size)
+void *SequentialPool::allocateHelp(bsls::Types::size_type size)
 {
-    BSLS_ASSERT(0 < size);
-
-    if (BSLS_PERFORMANCEHINT_PREDICT_LIKELY(d_buffer.buffer())) {
-        void *result = d_buffer.allocate(size);
-        if (BSLS_PERFORMANCEHINT_PREDICT_LIKELY(result)) {
-            return result;                                            // RETURN
-        }
-    }
-
     const int nextSize = calculateNextBufferSize(size);
 
     if (nextSize < static_cast<int>(size)) {

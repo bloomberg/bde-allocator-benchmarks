@@ -908,6 +908,26 @@ int MultipoolAllocator::maxPooledBlockSize() const
     return d_multipool.maxPooledBlockSize();
 }
 
+inline
+void *MultipoolAllocator::allocate(size_type size)
+{
+    if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(0 == size)) {
+        BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
+        return 0;                                                     // RETURN
+    }
+
+    return d_multipool.allocate(size);
+}
+
+inline
+void MultipoolAllocator::deallocate(void *address)
+{
+    if (BSLS_PERFORMANCEHINT_PREDICT_LIKELY(address != 0)) {
+        d_multipool.deallocate(address);
+    }
+    BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
+}
+
 }  // close package namespace
 }  // close enterprise namespace
 

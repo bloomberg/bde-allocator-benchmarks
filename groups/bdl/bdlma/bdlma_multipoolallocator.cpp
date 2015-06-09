@@ -21,24 +21,6 @@ MultipoolAllocator::~MultipoolAllocator()
 }
 
 // MANIPULATORS
-void *MultipoolAllocator::allocate(size_type size)
-{
-    if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(0 == size)) {
-        BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-        return 0;                                                     // RETURN
-    }
-
-    return d_multipool.allocate(size);
-}
-
-void MultipoolAllocator::deallocate(void *address)
-{
-    if (BSLS_PERFORMANCEHINT_PREDICT_LIKELY(address != 0)) {
-        d_multipool.deallocate(address);
-    }
-    BSLS_PERFORMANCEHINT_UNLIKELY_HINT;
-}
-
 void MultipoolAllocator::reserveCapacity(size_type size, size_type numObjects)
 {
     if (BSLS_PERFORMANCEHINT_PREDICT_UNLIKELY(0 == size)) {
