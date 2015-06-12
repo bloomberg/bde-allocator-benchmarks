@@ -61,7 +61,7 @@ LDFLAGS_LOCAL = $(LIBS) $(LDFLAGS)
 
 all: run
 
-BINARIES = growth \
+BINARIES = growth growth-DS159long \
            locality-AS1 locality-AS7 locality-AS9 locality-AS13 \
            zation tention
 
@@ -96,6 +96,9 @@ bde-tag: Makefile
 growth: growth.cc allocont.h bde-tag
 	$(CXX) -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
 
+growth-DS159long: growth-DS159long.cc allocont.h bde-tag
+	$(CXX) -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
+
 # section 8
 locality-AS1: locality.cc allocont.h
 	$(CXX) -DSTDALLOC -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
@@ -125,6 +128,17 @@ run-growth: growth
         done
 	(cd results; cat growth-$$SIZE-* >results/growth-result )
 	(cd results; ./reduce-growth-results; rm T*; )
+
+run-growth-DS159long: growth-DS159long
+	@echo With GROWTH_SIZE 20 this may take a full day to complete:
+	SIZE=$(GROWTH_SIZE) ; \
+	for i in 04 05 06 07 08 09 10 11 12 13 14 15 16; do \
+           echo ./growth-DS159long $$SIZE $$i - ; \
+           mkdir -p results-DS159long; \
+           (cd results-DS159long; ../growth-DS159long $$SIZE $$i - | tee "growth-$$SIZE-$$i") ; \
+        done
+	(cd results-DS159long; cat growth-$$SIZE-* >results-DS159long/growth-result )
+	(cd results-DS159long; ./reduce-growth-results; rm T*; )
 
 run-locality: locality-AS1 locality-AS7 locality-AS9 locality-AS13
 	@( \
