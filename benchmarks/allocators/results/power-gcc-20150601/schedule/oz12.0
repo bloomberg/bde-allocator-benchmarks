@@ -1,0 +1,468 @@
+
+nS = -12	iL = 12	aC = 0	cC = 5	it = 1
+nS = 1	iL = 4096	aC = 0	cC = 20480	it = 1
+
+minLen = 4096, maxLen = 4096, diff = 0
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 12	aC = 256	cC = 5	it = 1
+nS = 1	iL = 4096	aC = 1048576	cC = 20480	it = 1
+
+minLen = 4096, maxLen = 4096, diff = 0
+
+real	0m0.007s
+user	0m0.000s
+sys	0m0.007s
+
+nS = -12	iL = 12	aC = 0	cC = -5	it = 1
+nS = 1	iL = 4096	aC = 0	cC = -20480	it = 1
+
+minLen = 4096, maxLen = 4096, diff = 0
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 12	aC = 256	cC = -5	it = 1
+nS = 1	iL = 4096	aC = 1048576	cC = -20480	it = 1
+
+minLen = 4096, maxLen = 4096, diff = 0
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 11	aC = 0	cC = 5	it = 1
+nS = 2	iL = 2048	aC = 0	cC = 20480	it = 1
+
+minLen = 1929, maxLen = 2167, diff = 238
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.005s
+
+nS = -12	iL = 11	aC = 256	cC = 5	it = 1
+nS = 2	iL = 2048	aC = 524288	cC = 20480	it = 1
+
+minLen = 1929, maxLen = 2167, diff = 238
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 11	aC = 0	cC = -5	it = 1
+nS = 2	iL = 2048	aC = 0	cC = -20480	it = 1
+
+minLen = 1929, maxLen = 2167, diff = 238
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.005s
+
+nS = -12	iL = 11	aC = 256	cC = -5	it = 1
+nS = 2	iL = 2048	aC = 524288	cC = -20480	it = 1
+
+minLen = 1929, maxLen = 2167, diff = 238
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 10	aC = 0	cC = 5	it = 1
+nS = 4	iL = 1024	aC = 0	cC = 20480	it = 1
+
+minLen = 912, maxLen = 1141, diff = 229
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 10	aC = 256	cC = 5	it = 1
+nS = 4	iL = 1024	aC = 262144	cC = 20480	it = 1
+
+minLen = 912, maxLen = 1141, diff = 229
+
+real	0m0.008s
+user	0m0.000s
+sys	0m0.008s
+
+nS = -12	iL = 10	aC = 0	cC = -5	it = 1
+nS = 4	iL = 1024	aC = 0	cC = -20480	it = 1
+
+minLen = 912, maxLen = 1141, diff = 229
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 10	aC = 256	cC = -5	it = 1
+nS = 4	iL = 1024	aC = 262144	cC = -20480	it = 1
+
+minLen = 912, maxLen = 1141, diff = 229
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 9	aC = 0	cC = 5	it = 1
+nS = 8	iL = 512	aC = 0	cC = 20480	it = 1
+
+minLen = 423, maxLen = 597, diff = 174
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.005s
+
+nS = -12	iL = 9	aC = 256	cC = 5	it = 1
+nS = 8	iL = 512	aC = 131072	cC = 20480	it = 1
+
+minLen = 423, maxLen = 597, diff = 174
+
+real	0m0.008s
+user	0m0.008s
+sys	0m0.000s
+
+nS = -12	iL = 9	aC = 0	cC = -5	it = 1
+nS = 8	iL = 512	aC = 0	cC = -20480	it = 1
+
+minLen = 423, maxLen = 597, diff = 174
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.005s
+
+nS = -12	iL = 9	aC = 256	cC = -5	it = 1
+nS = 8	iL = 512	aC = 131072	cC = -20480	it = 1
+
+minLen = 423, maxLen = 597, diff = 174
+
+real	0m0.006s
+user	0m0.000s
+sys	0m0.006s
+
+nS = -12	iL = 8	aC = 0	cC = 5	it = 1
+nS = 16	iL = 256	aC = 0	cC = 20480	it = 1
+
+minLen = 168, maxLen = 333, diff = 165
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 8	aC = 256	cC = 5	it = 1
+nS = 16	iL = 256	aC = 65536	cC = 20480	it = 1
+
+minLen = 168, maxLen = 333, diff = 165
+
+real	0m0.008s
+user	0m0.000s
+sys	0m0.008s
+
+nS = -12	iL = 8	aC = 0	cC = -5	it = 1
+nS = 16	iL = 256	aC = 0	cC = -20480	it = 1
+
+minLen = 168, maxLen = 333, diff = 165
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 8	aC = 256	cC = -5	it = 1
+nS = 16	iL = 256	aC = 65536	cC = -20480	it = 1
+
+minLen = 168, maxLen = 333, diff = 165
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 7	aC = 0	cC = 5	it = 1
+nS = 32	iL = 128	aC = 0	cC = 20480	it = 1
+
+minLen = 61, maxLen = 195, diff = 134
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.005s
+
+nS = -12	iL = 7	aC = 256	cC = 5	it = 1
+nS = 32	iL = 128	aC = 32768	cC = 20480	it = 1
+
+minLen = 61, maxLen = 195, diff = 134
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 7	aC = 0	cC = -5	it = 1
+nS = 32	iL = 128	aC = 0	cC = -20480	it = 1
+
+minLen = 61, maxLen = 195, diff = 134
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.005s
+
+nS = -12	iL = 7	aC = 256	cC = -5	it = 1
+nS = 32	iL = 128	aC = 32768	cC = -20480	it = 1
+
+minLen = 61, maxLen = 195, diff = 134
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 6	aC = 0	cC = 5	it = 1
+nS = 64	iL = 64	aC = 0	cC = 20480	it = 1
+
+minLen = 6, maxLen = 113, diff = 107
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 6	aC = 256	cC = 5	it = 1
+nS = 64	iL = 64	aC = 16384	cC = 20480	it = 1
+
+minLen = 6, maxLen = 113, diff = 107
+
+real	0m0.007s
+user	0m0.000s
+sys	0m0.007s
+
+nS = -12	iL = 6	aC = 0	cC = -5	it = 1
+nS = 64	iL = 64	aC = 0	cC = -20480	it = 1
+
+minLen = 6, maxLen = 113, diff = 107
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 6	aC = 256	cC = -5	it = 1
+nS = 64	iL = 64	aC = 16384	cC = -20480	it = 1
+
+minLen = 6, maxLen = 113, diff = 107
+
+real	0m0.007s
+user	0m0.000s
+sys	0m0.007s
+
+nS = -12	iL = 5	aC = 0	cC = 5	it = 1
+nS = 128	iL = 32	aC = 0	cC = 20480	it = 1
+
+minLen = 1, maxLen = 72, diff = 71
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 5	aC = 256	cC = 5	it = 1
+nS = 128	iL = 32	aC = 8192	cC = 20480	it = 1
+
+minLen = 1, maxLen = 72, diff = 71
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 5	aC = 0	cC = -5	it = 1
+nS = 128	iL = 32	aC = 0	cC = -20480	it = 1
+
+minLen = 1, maxLen = 72, diff = 71
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.005s
+
+nS = -12	iL = 5	aC = 256	cC = -5	it = 1
+nS = 128	iL = 32	aC = 8192	cC = -20480	it = 1
+
+minLen = 1, maxLen = 72, diff = 71
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 4	aC = 0	cC = 5	it = 1
+nS = 256	iL = 16	aC = 0	cC = 20480	it = 1
+
+minLen = 0, maxLen = 44, diff = 44
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.005s
+
+nS = -12	iL = 4	aC = 256	cC = 5	it = 1
+nS = 256	iL = 16	aC = 4096	cC = 20480	it = 1
+
+minLen = 0, maxLen = 44, diff = 44
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 4	aC = 0	cC = -5	it = 1
+nS = 256	iL = 16	aC = 0	cC = -20480	it = 1
+
+minLen = 0, maxLen = 44, diff = 44
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 4	aC = 256	cC = -5	it = 1
+nS = 256	iL = 16	aC = 4096	cC = -20480	it = 1
+
+minLen = 0, maxLen = 44, diff = 44
+
+real	0m0.007s
+user	0m0.000s
+sys	0m0.007s
+
+nS = -12	iL = 3	aC = 0	cC = 5	it = 1
+nS = 512	iL = 8	aC = 0	cC = 20480	it = 1
+
+minLen = 0, maxLen = 27, diff = 27
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 3	aC = 256	cC = 5	it = 1
+nS = 512	iL = 8	aC = 2048	cC = 20480	it = 1
+
+minLen = 0, maxLen = 27, diff = 27
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 3	aC = 0	cC = -5	it = 1
+nS = 512	iL = 8	aC = 0	cC = -20480	it = 1
+
+minLen = 0, maxLen = 27, diff = 27
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.005s
+
+nS = -12	iL = 3	aC = 256	cC = -5	it = 1
+nS = 512	iL = 8	aC = 2048	cC = -20480	it = 1
+
+minLen = 0, maxLen = 27, diff = 27
+
+real	0m0.008s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 2	aC = 0	cC = 5	it = 1
+nS = 1024	iL = 4	aC = 0	cC = 20480	it = 1
+
+minLen = 0, maxLen = 16, diff = 16
+
+real	0m0.005s
+user	0m0.000s
+sys	0m0.005s
+
+nS = -12	iL = 2	aC = 256	cC = 5	it = 1
+nS = 1024	iL = 4	aC = 1024	cC = 20480	it = 1
+
+minLen = 0, maxLen = 16, diff = 16
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 2	aC = 0	cC = -5	it = 1
+nS = 1024	iL = 4	aC = 0	cC = -20480	it = 1
+
+minLen = 0, maxLen = 16, diff = 16
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 2	aC = 256	cC = -5	it = 1
+nS = 1024	iL = 4	aC = 1024	cC = -20480	it = 1
+
+minLen = 0, maxLen = 16, diff = 16
+
+real	0m0.007s
+user	0m0.000s
+sys	0m0.007s
+
+nS = -12	iL = 1	aC = 0	cC = 5	it = 1
+nS = 2048	iL = 2	aC = 0	cC = 20480	it = 1
+
+minLen = 0, maxLen = 9, diff = 9
+
+real	0m0.005s
+user	0m0.005s
+sys	0m0.000s
+
+nS = -12	iL = 1	aC = 256	cC = 5	it = 1
+nS = 2048	iL = 2	aC = 512	cC = 20480	it = 1
+
+minLen = 0, maxLen = 9, diff = 9
+
+real	0m0.008s
+user	0m0.008s
+sys	0m0.000s
+
+nS = -12	iL = 1	aC = 0	cC = -5	it = 1
+nS = 2048	iL = 2	aC = 0	cC = -20480	it = 1
+
+minLen = 0, maxLen = 9, diff = 9
+
+real	0m0.006s
+user	0m0.000s
+sys	0m0.006s
+
+nS = -12	iL = 1	aC = 256	cC = -5	it = 1
+nS = 2048	iL = 2	aC = 512	cC = -20480	it = 1
+
+minLen = 0, maxLen = 9, diff = 9
+
+real	0m0.007s
+user	0m0.007s
+sys	0m0.000s
+
+nS = -12	iL = 0	aC = 0	cC = 5	it = 1
+nS = 4096	iL = 1	aC = 0	cC = 20480	it = 1
+
+minLen = 0, maxLen = 6, diff = 6
+
+real	0m0.006s
+user	0m0.006s
+sys	0m0.000s
+
+nS = -12	iL = 0	aC = 256	cC = 5	it = 1
+nS = 4096	iL = 1	aC = 256	cC = 20480	it = 1
+
+minLen = 0, maxLen = 6, diff = 6
+
+real	0m0.009s
+user	0m0.009s
+sys	0m0.000s
+
+nS = -12	iL = 0	aC = 0	cC = -5	it = 1
+nS = 4096	iL = 1	aC = 0	cC = -20480	it = 1
+
+minLen = 0, maxLen = 6, diff = 6
+
+real	0m0.006s
+user	0m0.000s
+sys	0m0.006s
+
+nS = -12	iL = 0	aC = 256	cC = -5	it = 1
+nS = 4096	iL = 1	aC = 256	cC = -20480	it = 1
+
+minLen = 0, maxLen = 6, diff = 6
+
+real	0m0.011s
+user	0m0.011s
+sys	0m0.000s
