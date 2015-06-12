@@ -462,6 +462,7 @@ class SequentialPool {
         // released.
 
     // MANIPULATORS
+    void *allocateHelp(bsls::Types::size_type size);
     void *allocate(bsls::Types::size_type size);
         // Return the address of a contiguous block of memory of the specified
         // 'size' (in bytes) according to the alignment strategy specified at
@@ -602,6 +603,21 @@ SequentialPool::~SequentialPool()
 }
 
 // MANIPULATORS
+inline
+void *SequentialPool::allocate(bsls::Types::size_type size)
+{
+    BSLS_ASSERT(0 < size);
+
+    if (BSLS_PERFORMANCEHINT_PREDICT_LIKELY(d_buffer.buffer())) {
+        void *result = d_buffer.allocate(size);
+        if (BSLS_PERFORMANCEHINT_PREDICT_LIKELY(result)) {
+            return result;                                            // RETURN
+        }
+    }
+
+    return allocateHelp(size);
+}
+
 template <class TYPE>
 inline
 void SequentialPool::deleteObjectRaw(const TYPE *object)

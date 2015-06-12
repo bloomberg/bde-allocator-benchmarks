@@ -758,6 +758,44 @@ int Multipool::maxPooledBlockSize() const
     return d_maxBlockSize;
 }
 
+inline
+void *Multipool::allocate(int size)
+{
+    BSLS_ASSERT(1 <= size);
+
+    if (size <= d_maxBlockSize) {
+        const int pool = findPool(size);
+        Header *p = static_cast<Header *>(d_pools_p[pool].allocate());
+        p->d_header.d_poolIdx = pool;
+        return p + 1;
+    }
+
+    // The requested size is large and will not be pooled.
+
+    Header *p = static_cast<Header *>(
+                                  d_blockList.allocate(size + sizeof(Header)));
+    p->d_header.d_poolIdx = -1;
+    return p + 1;
+}
+
+inline
+void Multipool::deallocate(void *address)
+{
+    BSLS_ASSERT(address);
+
+    Header *h = static_cast<Header *>(address) - 1;
+
+    const int pool = h->d_header.d_poolIdx;
+
+    if (-1 == pool) {
+        d_blockList.deallocate(h);
+    }
+    else {
+        d_pools_p[pool].deallocate(h);
+    }
+}
+
+
 }  // close package namespace
 }  // close enterprise namespace
 
