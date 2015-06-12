@@ -1,0 +1,704 @@
+********** using AS1 default std::allocator:
+time ./locality-AS1 -21 4 256 5 1
+
+nS = -21	iL = 4	aC = 256	cC = 5	it = 1
+nS = 131072	iL = 16	aC = 4096	cC = 10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m5.162s
+user	0m5.142s
+sys	0m0.020s
+
+time ./locality-AS1 -21 4 256 5 0
+
+nS = -21	iL = 4	aC = 256	cC = 5	it = 0
+nS = 131072	iL = 16	aC = 4096	cC = 10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m4.047s
+user	0m4.041s
+sys	0m0.000s
+
+time ./locality-AS1 -21 4 256 -5 1
+
+nS = -21	iL = 4	aC = 256	cC = -5	it = 1
+nS = 131072	iL = 16	aC = 4096	cC = -10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m5.022s
+user	0m5.022s
+sys	0m0.000s
+
+time ./locality-AS1 -21 4 256 -5 0
+
+nS = -21	iL = 4	aC = 256	cC = -5	it = 0
+nS = 131072	iL = 16	aC = 4096	cC = -10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m4.101s
+user	0m4.075s
+sys	0m0.020s
+
+time ./locality-AS1 -21 4 1 5 1
+
+nS = -21	iL = 4	aC = 1	cC = 5	it = 1
+nS = 131072	iL = 16	aC = 16	cC = 10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m4.292s
+user	0m4.281s
+sys	0m0.010s
+
+time ./locality-AS1 -21 4 1 5 0
+
+nS = -21	iL = 4	aC = 1	cC = 5	it = 0
+nS = 131072	iL = 16	aC = 16	cC = 10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m4.780s
+user	0m4.768s
+sys	0m0.000s
+
+time ./locality-AS1 -21 4 1 -5 1
+
+nS = -21	iL = 4	aC = 1	cC = -5	it = 1
+nS = 131072	iL = 16	aC = 16	cC = -10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m4.236s
+user	0m4.215s
+sys	0m0.020s
+
+time ./locality-AS1 -21 4 1 -5 0
+
+nS = -21	iL = 4	aC = 1	cC = -5	it = 0
+nS = 131072	iL = 16	aC = 16	cC = -10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m4.233s
+user	0m4.223s
+sys	0m0.010s
+
+time ./locality-AS1 -21 17 256 5 1
+
+nS = -21	iL = 17	aC = 256	cC = 5	it = 1
+nS = 16	iL = 131072	aC = 33554432	cC = 10485760	it = 1
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m18.364s
+user	0m18.354s
+sys	0m0.000s
+
+time ./locality-AS1 -21 17 256 5 0
+
+nS = -21	iL = 17	aC = 256	cC = 5	it = 0
+nS = 16	iL = 131072	aC = 33554432	cC = 10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m1.841s
+user	0m1.835s
+sys	0m0.000s
+
+time ./locality-AS1 -21 17 256 -5 1
+
+nS = -21	iL = 17	aC = 256	cC = -5	it = 1
+nS = 16	iL = 131072	aC = 33554432	cC = -10485760	it = 1
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m2.560s
+user	0m2.560s
+sys	0m0.000s
+
+time ./locality-AS1 -21 17 256 -5 0
+
+nS = -21	iL = 17	aC = 256	cC = -5	it = 0
+nS = 16	iL = 131072	aC = 33554432	cC = -10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m1.833s
+user	0m1.822s
+sys	0m0.010s
+
+time ./locality-AS1 -21 17 1 5 256
+
+nS = -21	iL = 17	aC = 1	cC = 5	it = 256
+nS = 16	iL = 131072	aC = 131072	cC = 10485760	it = 256
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m31.345s
+user	0m31.335s
+sys	0m0.000s
+
+time ./locality-AS1 -21 17 1 5 0
+
+nS = -21	iL = 17	aC = 1	cC = 5	it = 0
+nS = 16	iL = 131072	aC = 131072	cC = 10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m1.831s
+user	0m1.810s
+sys	0m0.020s
+
+time ./locality-AS1 -21 17 1 -5 256
+
+nS = -21	iL = 17	aC = 1	cC = -5	it = 256
+nS = 16	iL = 131072	aC = 131072	cC = -10485760	it = 256
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m4.032s
+user	0m4.022s
+sys	0m0.010s
+
+time ./locality-AS1 -21 17 1 -5 0
+
+nS = -21	iL = 17	aC = 1	cC = -5	it = 0
+nS = 16	iL = 131072	aC = 131072	cC = -10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m1.833s
+user	0m1.803s
+sys	0m0.030s
+********** using AS7 compile-time-bound multipool
+time ./locality-AS7 -21 4 256 5 1
+
+nS = -21	iL = 4	aC = 256	cC = 5	it = 1
+nS = 131072	iL = 16	aC = 4096	cC = 10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m6.168s
+user	0m6.128s
+sys	0m0.040s
+
+time ./locality-AS7 -21 4 256 5 0
+
+nS = -21	iL = 4	aC = 256	cC = 5	it = 0
+nS = 131072	iL = 16	aC = 4096	cC = 10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m5.355s
+user	0m5.297s
+sys	0m0.040s
+
+time ./locality-AS7 -21 4 256 -5 1
+
+nS = -21	iL = 4	aC = 256	cC = -5	it = 1
+nS = 131072	iL = 16	aC = 4096	cC = -10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m6.311s
+user	0m6.263s
+sys	0m0.030s
+
+time ./locality-AS7 -21 4 256 -5 0
+
+nS = -21	iL = 4	aC = 256	cC = -5	it = 0
+nS = 131072	iL = 16	aC = 4096	cC = -10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m5.413s
+user	0m5.382s
+sys	0m0.030s
+
+time ./locality-AS7 -21 4 1 5 1
+
+nS = -21	iL = 4	aC = 1	cC = 5	it = 1
+nS = 131072	iL = 16	aC = 16	cC = 10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m5.404s
+user	0m5.354s
+sys	0m0.050s
+
+time ./locality-AS7 -21 4 1 5 0
+
+nS = -21	iL = 4	aC = 1	cC = 5	it = 0
+nS = 131072	iL = 16	aC = 16	cC = 10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m5.390s
+user	0m5.369s
+sys	0m0.020s
+
+time ./locality-AS7 -21 4 1 -5 1
+
+nS = -21	iL = 4	aC = 1	cC = -5	it = 1
+nS = 131072	iL = 16	aC = 16	cC = -10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m5.439s
+user	0m5.419s
+sys	0m0.020s
+
+time ./locality-AS7 -21 4 1 -5 0
+
+nS = -21	iL = 4	aC = 1	cC = -5	it = 0
+nS = 131072	iL = 16	aC = 16	cC = -10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m5.381s
+user	0m5.370s
+sys	0m0.010s
+
+time ./locality-AS7 -21 17 256 5 1
+
+nS = -21	iL = 17	aC = 256	cC = 5	it = 1
+nS = 16	iL = 131072	aC = 33554432	cC = 10485760	it = 1
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m4.116s
+user	0m4.106s
+sys	0m0.010s
+
+time ./locality-AS7 -21 17 256 5 0
+
+nS = -21	iL = 17	aC = 256	cC = 5	it = 0
+nS = 16	iL = 131072	aC = 33554432	cC = 10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.821s
+user	0m0.821s
+sys	0m0.000s
+
+time ./locality-AS7 -21 17 256 -5 1
+
+nS = -21	iL = 17	aC = 256	cC = -5	it = 1
+nS = 16	iL = 131072	aC = 33554432	cC = -10485760	it = 1
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m1.711s
+user	0m1.701s
+sys	0m0.010s
+
+time ./locality-AS7 -21 17 256 -5 0
+
+nS = -21	iL = 17	aC = 256	cC = -5	it = 0
+nS = 16	iL = 131072	aC = 33554432	cC = -10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.801s
+user	0m0.801s
+sys	0m0.000s
+
+time ./locality-AS7 -21 17 1 5 256
+
+nS = -21	iL = 17	aC = 1	cC = 5	it = 256
+nS = 16	iL = 131072	aC = 131072	cC = 10485760	it = 256
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m6.297s
+user	0m6.286s
+sys	0m0.010s
+
+time ./locality-AS7 -21 17 1 5 0
+
+nS = -21	iL = 17	aC = 1	cC = 5	it = 0
+nS = 16	iL = 131072	aC = 131072	cC = 10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.803s
+user	0m0.793s
+sys	0m0.010s
+
+time ./locality-AS7 -21 17 1 -5 256
+
+nS = -21	iL = 17	aC = 1	cC = -5	it = 256
+nS = 16	iL = 131072	aC = 131072	cC = -10485760	it = 256
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m3.788s
+user	0m3.788s
+sys	0m0.000s
+
+time ./locality-AS7 -21 17 1 -5 0
+
+nS = -21	iL = 17	aC = 1	cC = -5	it = 0
+nS = 16	iL = 131072	aC = 131072	cC = -10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.816s
+user	0m0.805s
+sys	0m0.010s
+********** using AS9 polymorphic multipool:
+time ./locality-AS9 -21 4 256 5 1
+
+nS = -21	iL = 4	aC = 256	cC = 5	it = 1
+nS = 131072	iL = 16	aC = 4096	cC = 10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m7.046s
+user	0m7.005s
+sys	0m0.040s
+
+time ./locality-AS9 -21 4 256 5 0
+
+nS = -21	iL = 4	aC = 256	cC = 5	it = 0
+nS = 131072	iL = 16	aC = 4096	cC = 10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m6.197s
+user	0m6.173s
+sys	0m0.020s
+
+time ./locality-AS9 -21 4 256 -5 1
+
+nS = -21	iL = 4	aC = 256	cC = -5	it = 1
+nS = 131072	iL = 16	aC = 4096	cC = -10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m7.038s
+user	0m6.997s
+sys	0m0.040s
+
+time ./locality-AS9 -21 4 256 -5 0
+
+nS = -21	iL = 4	aC = 256	cC = -5	it = 0
+nS = 131072	iL = 16	aC = 4096	cC = -10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m6.091s
+user	0m6.046s
+sys	0m0.030s
+
+time ./locality-AS9 -21 4 1 5 1
+
+nS = -21	iL = 4	aC = 1	cC = 5	it = 1
+nS = 131072	iL = 16	aC = 16	cC = 10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m6.262s
+user	0m6.194s
+sys	0m0.050s
+
+time ./locality-AS9 -21 4 1 5 0
+
+nS = -21	iL = 4	aC = 1	cC = 5	it = 0
+nS = 131072	iL = 16	aC = 16	cC = 10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m6.126s
+user	0m6.106s
+sys	0m0.020s
+
+time ./locality-AS9 -21 4 1 -5 1
+
+nS = -21	iL = 4	aC = 1	cC = -5	it = 1
+nS = 131072	iL = 16	aC = 16	cC = -10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m6.130s
+user	0m6.095s
+sys	0m0.020s
+
+time ./locality-AS9 -21 4 1 -5 0
+
+nS = -21	iL = 4	aC = 1	cC = -5	it = 0
+nS = 131072	iL = 16	aC = 16	cC = -10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m6.198s
+user	0m6.167s
+sys	0m0.030s
+
+time ./locality-AS9 -21 17 256 5 1
+
+nS = -21	iL = 17	aC = 256	cC = 5	it = 1
+nS = 16	iL = 131072	aC = 33554432	cC = 10485760	it = 1
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m4.278s
+user	0m4.278s
+sys	0m0.000s
+
+time ./locality-AS9 -21 17 256 5 0
+
+nS = -21	iL = 17	aC = 256	cC = 5	it = 0
+nS = 16	iL = 131072	aC = 33554432	cC = 10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.942s
+user	0m0.942s
+sys	0m0.000s
+
+time ./locality-AS9 -21 17 256 -5 1
+
+nS = -21	iL = 17	aC = 256	cC = -5	it = 1
+nS = 16	iL = 131072	aC = 33554432	cC = -10485760	it = 1
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m1.825s
+user	0m1.807s
+sys	0m0.020s
+
+time ./locality-AS9 -21 17 256 -5 0
+
+nS = -21	iL = 17	aC = 256	cC = -5	it = 0
+nS = 16	iL = 131072	aC = 33554432	cC = -10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.938s
+user	0m0.928s
+sys	0m0.010s
+
+time ./locality-AS9 -21 17 1 5 256
+
+nS = -21	iL = 17	aC = 1	cC = 5	it = 256
+nS = 16	iL = 131072	aC = 131072	cC = 10485760	it = 256
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m6.401s
+user	0m6.381s
+sys	0m0.020s
+
+time ./locality-AS9 -21 17 1 5 0
+
+nS = -21	iL = 17	aC = 1	cC = 5	it = 0
+nS = 16	iL = 131072	aC = 131072	cC = 10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.934s
+user	0m0.934s
+sys	0m0.000s
+
+time ./locality-AS9 -21 17 1 -5 256
+
+nS = -21	iL = 17	aC = 1	cC = -5	it = 256
+nS = 16	iL = 131072	aC = 131072	cC = -10485760	it = 256
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m3.943s
+user	0m3.933s
+sys	0m0.010s
+
+time ./locality-AS9 -21 17 1 -5 0
+
+nS = -21	iL = 17	aC = 1	cC = -5	it = 0
+nS = 16	iL = 131072	aC = 131072	cC = -10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.933s
+user	0m0.922s
+sys	0m0.010s
+********** using AS13 polymorphic multipool backed by monotonic:
+time ./locality-AS13 -21 4 256 5 1
+
+nS = -21	iL = 4	aC = 256	cC = 5	it = 1
+nS = 131072	iL = 16	aC = 4096	cC = 10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m7.865s
+user	0m7.814s
+sys	0m0.050s
+
+time ./locality-AS13 -21 4 256 5 0
+
+nS = -21	iL = 4	aC = 256	cC = 5	it = 0
+nS = 131072	iL = 16	aC = 4096	cC = 10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m7.041s
+user	0m6.961s
+sys	0m0.080s
+
+time ./locality-AS13 -21 4 256 -5 1
+
+nS = -21	iL = 4	aC = 256	cC = -5	it = 1
+nS = 131072	iL = 16	aC = 4096	cC = -10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m8.062s
+user	0m7.972s
+sys	0m0.090s
+
+time ./locality-AS13 -21 4 256 -5 0
+
+nS = -21	iL = 4	aC = 256	cC = -5	it = 0
+nS = 131072	iL = 16	aC = 4096	cC = -10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m7.086s
+user	0m7.045s
+sys	0m0.040s
+
+time ./locality-AS13 -21 4 1 5 1
+
+nS = -21	iL = 4	aC = 1	cC = 5	it = 1
+nS = 131072	iL = 16	aC = 16	cC = 10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m7.064s
+user	0m6.988s
+sys	0m0.070s
+
+time ./locality-AS13 -21 4 1 5 0
+
+nS = -21	iL = 4	aC = 1	cC = 5	it = 0
+nS = 131072	iL = 16	aC = 16	cC = 10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m7.013s
+user	0m6.932s
+sys	0m0.060s
+
+time ./locality-AS13 -21 4 1 -5 1
+
+nS = -21	iL = 4	aC = 1	cC = -5	it = 1
+nS = 131072	iL = 16	aC = 16	cC = -10485760	it = 1
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m7.155s
+user	0m7.027s
+sys	0m0.110s
+
+time ./locality-AS13 -21 4 1 -5 0
+
+nS = -21	iL = 4	aC = 1	cC = -5	it = 0
+nS = 131072	iL = 16	aC = 16	cC = -10485760	it = 0
+
+minLen = 0, maxLen = 49, diff = 49
+
+real	0m7.187s
+user	0m7.096s
+sys	0m0.090s
+
+time ./locality-AS13 -21 17 256 5 1
+
+nS = -21	iL = 17	aC = 256	cC = 5	it = 1
+nS = 16	iL = 131072	aC = 33554432	cC = 10485760	it = 1
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m4.313s
+user	0m4.313s
+sys	0m0.000s
+
+time ./locality-AS13 -21 17 256 5 0
+
+nS = -21	iL = 17	aC = 256	cC = 5	it = 0
+nS = 16	iL = 131072	aC = 33554432	cC = 10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.965s
+user	0m0.964s
+sys	0m0.000s
+
+time ./locality-AS13 -21 17 256 -5 1
+
+nS = -21	iL = 17	aC = 256	cC = -5	it = 1
+nS = 16	iL = 131072	aC = 33554432	cC = -10485760	it = 1
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m1.856s
+user	0m1.846s
+sys	0m0.010s
+
+time ./locality-AS13 -21 17 256 -5 0
+
+nS = -21	iL = 17	aC = 256	cC = -5	it = 0
+nS = 16	iL = 131072	aC = 33554432	cC = -10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.969s
+user	0m0.969s
+sys	0m0.000s
+
+time ./locality-AS13 -21 17 1 5 256
+
+nS = -21	iL = 17	aC = 1	cC = 5	it = 256
+nS = 16	iL = 131072	aC = 131072	cC = 10485760	it = 256
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m6.379s
+user	0m6.358s
+sys	0m0.020s
+
+time ./locality-AS13 -21 17 1 5 0
+
+nS = -21	iL = 17	aC = 1	cC = 5	it = 0
+nS = 16	iL = 131072	aC = 131072	cC = 10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.972s
+user	0m0.972s
+sys	0m0.000s
+
+time ./locality-AS13 -21 17 1 -5 256
+
+nS = -21	iL = 17	aC = 1	cC = -5	it = 256
+nS = 16	iL = 131072	aC = 131072	cC = -10485760	it = 256
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m3.951s
+user	0m3.941s
+sys	0m0.010s
+
+time ./locality-AS13 -21 17 1 -5 0
+
+nS = -21	iL = 17	aC = 1	cC = -5	it = 0
+nS = 16	iL = 131072	aC = 131072	cC = -10485760	it = 0
+
+minLen = 129716, maxLen = 132704, diff = 2988
+
+real	0m0.996s
+user	0m0.985s
+sys	0m0.010s
