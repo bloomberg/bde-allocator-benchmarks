@@ -126,7 +126,7 @@ run-growth: growth
            echo ./growth $$SIZE $$i - ; \
            (cd results; ../growth $$SIZE $$i - | tee "growth-$$SIZE-$$i") ; \
         done
-	(cd results; cat growth-$$SIZE-* >results/growth-result )
+	(cd results; cat growth-$$SIZE-* >growth-result )
 	(cd results; ./reduce-growth-results; rm T*; )
 
 run-growth-DS159long: growth-DS159long
@@ -137,7 +137,7 @@ run-growth-DS159long: growth-DS159long
            mkdir -p results-DS159long; \
            (cd results-DS159long; ../growth-DS159long $$SIZE $$i - | tee "growth-$$SIZE-$$i") ; \
         done
-	(cd results-DS159long; cat growth-$$SIZE-* >results-DS159long/growth-result )
+	(cd results-DS159long; cat growth-$$SIZE-* >growth-result )
 	(cd results-DS159long; ./reduce-growth-results; rm T*; )
 
 run-locality: locality-AS1 locality-AS7 locality-AS9 locality-AS13
