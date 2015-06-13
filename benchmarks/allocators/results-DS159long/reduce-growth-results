@@ -2,11 +2,11 @@
 
 for F in growth-*-*; do grep -h . $F | (
   F1=${F#growth-}; X=${F1%-*}; N=${F#growth-??-};
-  for S in HV; do for P in I; do for B in C R;
+  for S in V- VV HV; do for P in I; do for B in C R;
   do for M in ND PD PL MD ML XD XL; do read i; echo "$X$N$S$P$B$M, $i";
   done; done; done; done; ); done >T
 
-for i in HV; do for j in I; do grep "^....$i$j" T >T-$i$j; done; done
+for i in V- VV HV; do for j in I; do grep "^....$i$j" T >T-$i$j; done; done
 
 for i in T-???; do
     cat $i | (
@@ -57,7 +57,7 @@ for i in T-???; do
     )  >$i-ASxSZ.csv ;
 done
 
-for i in HV; do for j in I; do cat T-$i$j-ASxSZ.csv;
+for i in V- VV HV; do for j in I; do cat T-$i$j-ASxSZ.csv;
   done; done > growth.csv
 
 for i in T-???; do
@@ -108,5 +108,5 @@ for i in T-???; do
     )  >$i-ASxSZA.csv ;
 done
 
-for i in HV; do for j in I; do cat T-$i$j-ASxSZA.csv;
+for i in V- VV HV; do for j in I; do cat T-$i$j-ASxSZA.csv;
   done; done > growthA.csv
