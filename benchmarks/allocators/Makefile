@@ -15,8 +15,8 @@ AR = llvm-ar-3.6
 RANLIB = llvm-ranlib-3.6
 BDEWAF = waf
 
-OPTIM = -O -DBSLS_ASSERT_LEVEL_NONE
-LTO = -flto
+OPTIM = -O3 -DBSLS_ASSERT_LEVEL_NONE
+LTO =
 DEBUG = 
 PARALLEL = 
 GROWTH_SIZE = 20  # use 16 or less for testing
@@ -61,7 +61,7 @@ LDFLAGS_LOCAL = $(LIBS) $(LDFLAGS)
 
 all: run
 
-BINARIES = growth growth-DS159long \
+BINARIES = growth growth-DS159long shgrowth \
            locality-AS1 locality-AS7 locality-AS9 locality-AS13 \
            zation tention
 
@@ -97,6 +97,9 @@ growth: growth.cc allocont.h bde-tag
 	$(CXX) -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
 
 growth-DS159long: growth-DS159long.cc allocont.h bde-tag
+	$(CXX) -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
+
+shgrowth: shgrowth.cc allocont.h bde-tag
 	$(CXX) -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
 
 # section 8
