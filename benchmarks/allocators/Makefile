@@ -143,6 +143,16 @@ run-growth-DS159long: growth-DS159long
 	(cd results-DS159long; cat growth-$$SIZE-* >growth-result )
 	(cd results-DS159long; ./reduce-growth-results; rm T*; )
 
+run-shgrowth: shgrowth
+	@echo With GROWTH_SIZE 20 this may take a full day to complete:
+	SIZE=$(GROWTH_SIZE) ; \
+	for i in 04 05 06 07 08 09 10 11 12 13 14 15 16; do \
+           echo ./shgrowth $$SIZE $$i - ; \
+           (cd results; ../shgrowth $$SIZE $$i - | tee "growth-$$SIZE-$$i") ; \
+        done
+	(cd results; cat growth-$$SIZE-* >growth-result )
+	(cd results; ./reduce-growth-results; rm T* )
+
 run-locality: locality-AS1 locality-AS7 locality-AS9 locality-AS13
 	@( \
 	echo "********** using AS1 default std::allocator:"; \
