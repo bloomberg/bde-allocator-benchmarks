@@ -116,17 +116,23 @@ void print_datastruct(int mask)
 }
 
 struct subsystem {
-    explicit subsystem(int init_length) {
+    explicit subsystem(int init_length) : dist(25, 128) {
         for (int i : range{0, init_length})
-               dats.push_back(i);
+            dats.emplace_back(sptr(), dist(random_engine));
     }
-    std::list<int> dats;
+    bool empty() { return dats.empty(); }
+    void alter(subsystem& other) {
+        dats.pop_front();
+        other.dats.emplace_back(sptr(), dist(random_engine));
+    }
+    std::uniform_int_distribution<int> dist;
+    std::list<std::string> dats;
 };
 
 void shuffle()
 {
     const int subsystems = 1<<7;
-    const int init_length = 1<<19;
+    const int init_length = 1<<16;
     const int churns = subsystems * init_length * 5;
     std::uniform_int_distribution<int> dist(0, subsystems-1);
     std::vector<subsystem*> system;
@@ -135,15 +141,15 @@ void shuffle()
         system.push_back(new subsystem(init_length));
     for (int i = 0; i < churns; ) {
         size_t k = dist(random_engine);
-        if (! system[k]->dats.empty()) {
-            system[k]->dats.pop_front();
-            system[i % subsystems]->dats.push_back(-9);
+        if (! system[k]->empty()) {
+            system[k]->alter(*system[i % subsystems]);
             ++i;
         }
     }
-    // leak every second subsystem:
+    // leak every fourth subsystem:
     for (int i; i < subsystems; i+=2)
-        delete system[i];
+        if (i & 3)
+	    delete system[i];
 }
 
 template <typename Test>
