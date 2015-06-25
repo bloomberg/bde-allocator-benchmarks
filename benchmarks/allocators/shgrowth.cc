@@ -147,7 +147,7 @@ void shuffle()
         }
     }
     // leak every fourth subsystem:
-    for (int i; i < subsystems; i+=2)
+    for (int i = 0; i < subsystems; ++i)
         if (i & 3)
 	    delete system[i];
 }
