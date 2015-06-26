@@ -1555,6 +1555,7 @@ class shared_ptr {
         // indicating the error.  Note that if 'managedPtr' is empty, then an
         // empty shared pointer is created and 'basicAllocator' is ignored.
 
+#if 0
     template <class COMPATIBLE_TYPE>
     explicit shared_ptr(
                    native_std::auto_ptr<COMPATIBLE_TYPE>&  autoPtr,
@@ -1586,6 +1587,7 @@ class shared_ptr {
         // 'COMPATIBLE_TYPE *' is not implicitly convertible to
         // 'ELEMENT_TYPE *', then a compiler diagnostic will be emitted
         // indicating the error.
+#endif
 
     template <class ANY_TYPE>
     shared_ptr(const shared_ptr<ANY_TYPE>&  source,
@@ -1659,6 +1661,7 @@ class shared_ptr {
         // that object.  Note that if 'rhs' is empty, then this shared pointer
         // will also be empty after the assignment.
 
+#if 0
     template <class COMPATIBLE_TYPE>
     shared_ptr& operator=(native_std::auto_ptr<COMPATIBLE_TYPE> rhs);
         // Transfer, to this shared pointer, ownership of the modifiable object
@@ -1672,6 +1675,7 @@ class shared_ptr {
         // pointer held the last shared reference to that object.  Note that if
         // 'rhs' is empty, then this shared pointer will be empty after the
         // assignment.
+#endif
 
     void reset();
         // Reset this shared pointer to the empty state.  If this shared
@@ -3588,6 +3592,7 @@ shared_ptr<ELEMENT_TYPE>::shared_ptr(
     }
 }
 
+#if 0
 template <class ELEMENT_TYPE>
 template <class COMPATIBLE_TYPE>
 shared_ptr<ELEMENT_TYPE>::shared_ptr(
@@ -3628,6 +3633,7 @@ shared_ptr<ELEMENT_TYPE>::shared_ptr(
         d_rep_p = rep;
     }
 }
+#endif
 
 template <class ELEMENT_TYPE>
 template <class ANY_TYPE>
@@ -3733,6 +3739,7 @@ shared_ptr<ELEMENT_TYPE>::operator=(const shared_ptr<COMPATIBLE_TYPE>& rhs)
     return *this;
 }
 
+#if 0
 template <class ELEMENT_TYPE>
 template <class COMPATIBLE_TYPE>
 inline
@@ -3742,6 +3749,7 @@ shared_ptr<ELEMENT_TYPE>::operator=(native_std::auto_ptr<COMPATIBLE_TYPE> rhs)
     SelfType(rhs).swap(*this);
     return *this;
 }
+#endif
 
 template <class ELEMENT_TYPE>
 inline

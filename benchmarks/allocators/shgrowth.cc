@@ -692,9 +692,9 @@ int main(int ac, char** av)
     int split = 1 << logsplit;
     int runs = size / split;
 
-    std::uniform_int_distribution<char> char_dist('!', '~');
+    std::uniform_int_distribution<int> char_dist('!', '~');
     for (char& c : trash)
-        c = char_dist(random_engine);
+        c = (char) char_dist(random_engine);
 
     // The actual storage
     memset(pool, 1, sizeof(pool));  // Fault in real memory
