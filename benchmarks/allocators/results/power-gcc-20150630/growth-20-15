@@ -1,0 +1,192 @@
+
+3.02, (100%), vector:int, allocator: new/delete, bound: compile-time
+0.147, 4.87%, vector:int, allocator: monotonic, bound: compile-time
+0.631, 20.9%, vector:int, allocator: monotonic/drop, bound: compile-time
+0.133, 4.4%, vector:int, allocator: multipool, bound: compile-time
+0.582, 19.2%, vector:int, allocator: multipool/drop, bound: compile-time
+0.145, 4.8%, vector:int, allocator: multipool/monotonic, bound: compile-time
+0.58, 19.2%, vector:int, allocator: multipool/monotonic/drop, bound: compile-time
+
+3.5, 116%, vector:int, allocator: new/delete, bound: run-time
+0.571, 18.9%, vector:int, allocator: monotonic, bound: run-time
+0.58, 19.2%, vector:int, allocator: monotonic/drop, bound: run-time
+0.574, 19%, vector:int, allocator: multipool, bound: run-time
+0.596, 19.7%, vector:int, allocator: multipool/drop, bound: run-time
+0.582, 19.2%, vector:int, allocator: multipool/monotonic, bound: run-time
+0.57, 18.9%, vector:int, allocator: multipool/monotonic/drop, bound: run-time
+
+108, (100%), vector:string, allocator: new/delete, bound: compile-time
+17.9, 16.5%, vector:string, allocator: monotonic, bound: compile-time
+17.9, 16.5%, vector:string, allocator: monotonic/drop, bound: compile-time
+28.6, 26.4%, vector:string, allocator: multipool, bound: compile-time
+26.8, 24.7%, vector:string, allocator: multipool/drop, bound: compile-time
+20.7, 19.1%, vector:string, allocator: multipool/monotonic, bound: compile-time
+18.4, 17%, vector:string, allocator: multipool/monotonic/drop, bound: compile-time
+
+108, 99.9%, vector:string, allocator: new/delete, bound: run-time
+19, 17.6%, vector:string, allocator: monotonic, bound: run-time
+18.2, 16.9%, vector:string, allocator: monotonic/drop, bound: run-time
+29.6, 27.4%, vector:string, allocator: multipool, bound: run-time
+27.2, 25.1%, vector:string, allocator: multipool/drop, bound: run-time
+21.7, 20%, vector:string, allocator: multipool/monotonic, bound: run-time
+18.7, 17.3%, vector:string, allocator: multipool/monotonic/drop, bound: run-time
+
+54.4, (100%), unordered_set:int, allocator: new/delete, bound: compile-time
+7.29, 13.4%, unordered_set:int, allocator: monotonic, bound: compile-time
+7.25, 13.3%, unordered_set:int, allocator: monotonic/drop, bound: compile-time
+9.59, 17.6%, unordered_set:int, allocator: multipool, bound: compile-time
+9.06, 16.7%, unordered_set:int, allocator: multipool/drop, bound: compile-time
+8.86, 16.3%, unordered_set:int, allocator: multipool/monotonic, bound: compile-time
+8.57, 15.8%, unordered_set:int, allocator: multipool/monotonic/drop, bound: compile-time
+
+55.3, 102%, unordered_set:int, allocator: new/delete, bound: run-time
+8.24, 15.2%, unordered_set:int, allocator: monotonic, bound: run-time
+7.78, 14.3%, unordered_set:int, allocator: monotonic/drop, bound: run-time
+9.53, 17.5%, unordered_set:int, allocator: multipool, bound: run-time
+9.03, 16.6%, unordered_set:int, allocator: multipool/drop, bound: run-time
+8.81, 16.2%, unordered_set:int, allocator: multipool/monotonic, bound: run-time
+8.4, 15.4%, unordered_set:int, allocator: multipool/monotonic/drop, bound: run-time
+
+227, (100%), unordered_set:string, allocator: new/delete, bound: compile-time
+75.2, 33.2%, unordered_set:string, allocator: monotonic, bound: compile-time
+70.1, 30.9%, unordered_set:string, allocator: monotonic/drop, bound: compile-time
+83.9, 37%, unordered_set:string, allocator: multipool, bound: compile-time
+80.2, 35.4%, unordered_set:string, allocator: multipool/drop, bound: compile-time
+81.1, 35.8%, unordered_set:string, allocator: multipool/monotonic, bound: compile-time
+76.2, 33.6%, unordered_set:string, allocator: multipool/monotonic/drop, bound: compile-time
+
+260, 115%, unordered_set:string, allocator: new/delete, bound: run-time
+76.9, 33.9%, unordered_set:string, allocator: monotonic, bound: run-time
+71.2, 31.4%, unordered_set:string, allocator: monotonic/drop, bound: run-time
+85.6, 37.8%, unordered_set:string, allocator: multipool, bound: run-time
+81.3, 35.9%, unordered_set:string, allocator: multipool/drop, bound: run-time
+83.2, 36.7%, unordered_set:string, allocator: multipool/monotonic, bound: run-time
+77, 34%, unordered_set:string, allocator: multipool/monotonic/drop, bound: run-time
+
+3.39, (100%), vector:vector:int, allocator: new/delete, bound: compile-time
+0.183, 5.38%, vector:vector:int, allocator: monotonic, bound: compile-time
+0.183, 5.39%, vector:vector:int, allocator: monotonic/drop, bound: compile-time
+0.249, 7.35%, vector:vector:int, allocator: multipool, bound: compile-time
+0.237, 7%, vector:vector:int, allocator: multipool/drop, bound: compile-time
+0.223, 6.58%, vector:vector:int, allocator: multipool/monotonic, bound: compile-time
+0.202, 5.94%, vector:vector:int, allocator: multipool/monotonic/drop, bound: compile-time
+
+3.53, 104%, vector:vector:int, allocator: new/delete, bound: run-time
+0.188, 5.54%, vector:vector:int, allocator: monotonic, bound: run-time
+0.203, 5.99%, vector:vector:int, allocator: monotonic/drop, bound: run-time
+0.27, 7.95%, vector:vector:int, allocator: multipool, bound: run-time
+0.256, 7.56%, vector:vector:int, allocator: multipool/drop, bound: run-time
+0.209, 6.17%, vector:vector:int, allocator: multipool/monotonic, bound: run-time
+0.184, 5.42%, vector:vector:int, allocator: multipool/monotonic/drop, bound: run-time
+
+84.3, (100%), vector:vector:string, allocator: new/delete, bound: compile-time
+11.7, 13.8%, vector:vector:string, allocator: monotonic, bound: compile-time
+11.7, 13.9%, vector:vector:string, allocator: monotonic/drop, bound: compile-time
+22.8, 27.1%, vector:vector:string, allocator: multipool, bound: compile-time
+18.7, 22.2%, vector:vector:string, allocator: multipool/drop, bound: compile-time
+18, 21.4%, vector:vector:string, allocator: multipool/monotonic, bound: compile-time
+13.3, 15.7%, vector:vector:string, allocator: multipool/monotonic/drop, bound: compile-time
+
+86.2, 102%, vector:vector:string, allocator: new/delete, bound: run-time
+11.7, 13.9%, vector:vector:string, allocator: monotonic, bound: run-time
+10.7, 12.7%, vector:vector:string, allocator: monotonic/drop, bound: run-time
+24.8, 29.4%, vector:vector:string, allocator: multipool, bound: run-time
+19, 22.5%, vector:vector:string, allocator: multipool/drop, bound: run-time
+20.9, 24.8%, vector:vector:string, allocator: multipool/monotonic, bound: run-time
+13.4, 15.9%, vector:vector:string, allocator: multipool/monotonic/drop, bound: run-time
+
+53.6, (100%), vector:unordered_set:int, allocator: new/delete, bound: compile-time
+4.43, 8.26%, vector:unordered_set:int, allocator: monotonic, bound: compile-time
+3.92, 7.31%, vector:unordered_set:int, allocator: monotonic/drop, bound: compile-time
+5.79, 10.8%, vector:unordered_set:int, allocator: multipool, bound: compile-time
+5.17, 9.64%, vector:unordered_set:int, allocator: multipool/drop, bound: compile-time
+4.99, 9.31%, vector:unordered_set:int, allocator: multipool/monotonic, bound: compile-time
+3.94, 7.35%, vector:unordered_set:int, allocator: multipool/monotonic/drop, bound: compile-time
+
+54.7, 102%, vector:unordered_set:int, allocator: new/delete, bound: run-time
+4.99, 9.31%, vector:unordered_set:int, allocator: monotonic, bound: run-time
+4.3, 8.01%, vector:unordered_set:int, allocator: monotonic/drop, bound: run-time
+6.6, 12.3%, vector:unordered_set:int, allocator: multipool, bound: run-time
+5.88, 11%, vector:unordered_set:int, allocator: multipool/drop, bound: run-time
+5.79, 10.8%, vector:unordered_set:int, allocator: multipool/monotonic, bound: run-time
+4.65, 8.66%, vector:unordered_set:int, allocator: multipool/monotonic/drop, bound: run-time
+
+123, (100%), vector:unordered_set:string, allocator: new/delete, bound: compile-time
+41.6, 33.8%, vector:unordered_set:string, allocator: monotonic, bound: compile-time
+28.3, 23%, vector:unordered_set:string, allocator: monotonic/drop, bound: compile-time
+47.4, 38.4%, vector:unordered_set:string, allocator: multipool, bound: compile-time
+40.8, 33.1%, vector:unordered_set:string, allocator: multipool/drop, bound: compile-time
+39.7, 32.2%, vector:unordered_set:string, allocator: multipool/monotonic, bound: compile-time
+32.4, 26.3%, vector:unordered_set:string, allocator: multipool/monotonic/drop, bound: compile-time
+
+141, 114%, vector:unordered_set:string, allocator: new/delete, bound: run-time
+42.3, 34.3%, vector:unordered_set:string, allocator: monotonic, bound: run-time
+29, 23.6%, vector:unordered_set:string, allocator: monotonic/drop, bound: run-time
+50.6, 41%, vector:unordered_set:string, allocator: multipool, bound: run-time
+41.8, 33.9%, vector:unordered_set:string, allocator: multipool/drop, bound: run-time
+42.9, 34.8%, vector:unordered_set:string, allocator: multipool/monotonic, bound: run-time
+33.2, 27%, vector:unordered_set:string, allocator: multipool/monotonic/drop, bound: run-time
+
+4.33, (100%), unordered_set:vector:int, allocator: new/delete, bound: compile-time
+0.262, 6.05%, unordered_set:vector:int, allocator: monotonic, bound: compile-time
+0.223, 5.15%, unordered_set:vector:int, allocator: monotonic/drop, bound: compile-time
+0.351, 8.1%, unordered_set:vector:int, allocator: multipool, bound: compile-time
+0.333, 7.68%, unordered_set:vector:int, allocator: multipool/drop, bound: compile-time
+0.252, 5.81%, unordered_set:vector:int, allocator: multipool/monotonic, bound: compile-time
+0.224, 5.17%, unordered_set:vector:int, allocator: multipool/monotonic/drop, bound: compile-time
+
+4.55, 105%, unordered_set:vector:int, allocator: new/delete, bound: run-time
+0.274, 6.32%, unordered_set:vector:int, allocator: monotonic, bound: run-time
+0.228, 5.27%, unordered_set:vector:int, allocator: monotonic/drop, bound: run-time
+0.376, 8.67%, unordered_set:vector:int, allocator: multipool, bound: run-time
+0.351, 8.09%, unordered_set:vector:int, allocator: multipool/drop, bound: run-time
+0.275, 6.35%, unordered_set:vector:int, allocator: multipool/monotonic, bound: run-time
+0.238, 5.5%, unordered_set:vector:int, allocator: multipool/monotonic/drop, bound: run-time
+
+84.4, (100%), unordered_set:vector:string, allocator: new/delete, bound: compile-time
+11.9, 14.1%, unordered_set:vector:string, allocator: monotonic, bound: compile-time
+11.8, 14%, unordered_set:vector:string, allocator: monotonic/drop, bound: compile-time
+24.3, 28.7%, unordered_set:vector:string, allocator: multipool, bound: compile-time
+19.5, 23.2%, unordered_set:vector:string, allocator: multipool/drop, bound: compile-time
+18.9, 22.4%, unordered_set:vector:string, allocator: multipool/monotonic, bound: compile-time
+13.5, 16%, unordered_set:vector:string, allocator: multipool/monotonic/drop, bound: compile-time
+
+86.4, 102%, unordered_set:vector:string, allocator: new/delete, bound: run-time
+12.5, 14.8%, unordered_set:vector:string, allocator: monotonic, bound: run-time
+11.5, 13.6%, unordered_set:vector:string, allocator: monotonic/drop, bound: run-time
+25.8, 30.6%, unordered_set:vector:string, allocator: multipool, bound: run-time
+19.8, 23.5%, unordered_set:vector:string, allocator: multipool/drop, bound: run-time
+20.2, 24%, unordered_set:vector:string, allocator: multipool/monotonic, bound: run-time
+13.7, 16.3%, unordered_set:vector:string, allocator: multipool/monotonic/drop, bound: run-time
+
+54.7, (100%), unordered_set:unordered_set:int, allocator: new/delete, bound: compile-time
+4.37, 7.99%, unordered_set:unordered_set:int, allocator: monotonic, bound: compile-time
+3.73, 6.82%, unordered_set:unordered_set:int, allocator: monotonic/drop, bound: compile-time
+5.97, 10.9%, unordered_set:unordered_set:int, allocator: multipool, bound: compile-time
+5.16, 9.43%, unordered_set:unordered_set:int, allocator: multipool/drop, bound: compile-time
+5.06, 9.25%, unordered_set:unordered_set:int, allocator: multipool/monotonic, bound: compile-time
+3.94, 7.21%, unordered_set:unordered_set:int, allocator: multipool/monotonic/drop, bound: compile-time
+
+55.6, 102%, unordered_set:unordered_set:int, allocator: new/delete, bound: run-time
+5, 9.14%, unordered_set:unordered_set:int, allocator: monotonic, bound: run-time
+4.16, 7.61%, unordered_set:unordered_set:int, allocator: monotonic/drop, bound: run-time
+6.79, 12.4%, unordered_set:unordered_set:int, allocator: multipool, bound: run-time
+5.84, 10.7%, unordered_set:unordered_set:int, allocator: multipool/drop, bound: run-time
+5.88, 10.7%, unordered_set:unordered_set:int, allocator: multipool/monotonic, bound: run-time
+4.59, 8.39%, unordered_set:unordered_set:int, allocator: multipool/monotonic/drop, bound: run-time
+
+122, (100%), unordered_set:unordered_set:string, allocator: new/delete, bound: compile-time
+41.5, 34.1%, unordered_set:unordered_set:string, allocator: monotonic, bound: compile-time
+28.1, 23.1%, unordered_set:unordered_set:string, allocator: monotonic/drop, bound: compile-time
+47.4, 38.9%, unordered_set:unordered_set:string, allocator: multipool, bound: compile-time
+40.6, 33.3%, unordered_set:unordered_set:string, allocator: multipool/drop, bound: compile-time
+39.7, 32.6%, unordered_set:unordered_set:string, allocator: multipool/monotonic, bound: compile-time
+32.3, 26.5%, unordered_set:unordered_set:string, allocator: multipool/monotonic/drop, bound: compile-time
+
+140, 115%, unordered_set:unordered_set:string, allocator: new/delete, bound: run-time
+42.1, 34.6%, unordered_set:unordered_set:string, allocator: monotonic, bound: run-time
+28.8, 23.7%, unordered_set:unordered_set:string, allocator: monotonic/drop, bound: run-time
+50.6, 41.5%, unordered_set:unordered_set:string, allocator: multipool, bound: run-time
+41.6, 34.2%, unordered_set:unordered_set:string, allocator: multipool/drop, bound: run-time
+42.9, 35.2%, unordered_set:unordered_set:string, allocator: multipool/monotonic, bound: run-time
+33.1, 27.2%, unordered_set:unordered_set:string, allocator: multipool/monotonic/drop, bound: run-time
