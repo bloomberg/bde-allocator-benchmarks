@@ -185,7 +185,7 @@ run-schedule: locality-AS1
     )
 
 run-zation: zation
-	time ./test-zation | tee zation-result
+	(ulimit -v 5000000; time ./test-zation 2>/dev/null | tee zation-result)
 	mv zation-result results/
 
 run-tention: tention

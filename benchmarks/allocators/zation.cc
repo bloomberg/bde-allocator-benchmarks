@@ -2,18 +2,18 @@
 #include <cstdio>
 #include <cstdlib>
 #include <stdint.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
 
 #include <algorithm>
 #include <iostream>
-#include <string>
 #include <bdlma_sequentialallocator.h>
 #include <bdlma_multipoolallocator.h>
 #include <bslma_newdeleteallocator.h>
 #include <bsl_vector.h>
 
 using namespace BloombergLP;
-
-bool assumeFail = false;
 
 #define ITER 7
 
@@ -142,7 +142,6 @@ double test() {
         return t / v.size();
     }
 
-
     std::sort(v.begin(), v.end());
 
     double t = 0;
@@ -151,6 +150,58 @@ double test() {
         t += v[i];
     }
     return t / (v.size() - 1);
+}
+
+template <class T1, class T2>
+double childTest() {
+    int fd[2];
+    if (-1 == pipe(fd)) {
+        printf("could not open pipe\n");
+        exit(0);
+    }
+    pid_t pid = fork();
+    if (0 == pid) {
+        double rv = test<T1, T2>();
+        write(fd[1], &rv, sizeof rv);
+        close(fd[0]);
+        close(fd[1]);
+        exit(0);
+    }
+    int status;
+    wait(&status);
+    double rv = -1.0;
+    if (WIFEXITED(status)) {
+        read(fd[0], &rv, sizeof rv);
+    }
+    close(fd[0]);
+    close(fd[1]);
+    return rv;
+}
+
+template <class T1>
+double childTest() {
+    int fd[2];
+    if (-1 == pipe(fd)) {
+        printf("could not open pipe\n");
+        exit(0);
+    }
+    pid_t pid = fork();
+    if (0 == pid) {
+        double rv = test<T1>();
+        write(fd[1], &rv, sizeof rv);
+        close(fd[0]);
+        close(fd[1]);
+        exit(0);
+    }
+    int status;
+    wait(&status);
+    double rv = -1.0;
+    if (WIFEXITED(status)) {
+        read(fd[0], &rv, sizeof rv);
+    }
+    close(fd[0]);
+    close(fd[1]);
+    return rv;
 }
 
 int main(int argc, char *argv[]) {
@@ -162,81 +213,62 @@ int main(int argc, char *argv[]) {
     activeAllocation =  1LL << (activeSize - blockSize);
     allocationSize =  1LL << blockSize;
 
-
     printf("%i,%i,%i", totalSize, activeSize, blockSize);
+    fflush(stdout);
 
+    int status;
     double firstRV;
     for (int allocatorIndex = 0; allocatorIndex < 8; ++allocatorIndex) {
         double rv = -1.0;
         switch (allocatorIndex) {
           case 0: {
-            rv = test<directAllocator>();
+            rv = childTest<directAllocator>();
             firstRV = rv;
             printf(",%0.3lfs", rv);
+            fflush(stdout);
           } break;
           case 1: {
-            rv = test<bslma::NewDeleteAllocator>();
+            rv = childTest<bslma::NewDeleteAllocator>();
             printf(",%0.0lf", 100.0 * rv / firstRV);
+            fflush(stdout);
           } break;
           case 2: {
-            if (assumeFail && totalSize >= 32) printf(",fail");
-            else {
-                rv = test<bdlma::SequentialPool>();
-                printf(",%0.0lf", 100.0 * rv / firstRV);
-            }
+            rv = childTest<bdlma::SequentialPool>();
+            if (rv != -1.0) printf(",%0.0lf", 100.0 * rv / firstRV);
+            else printf(",fail");
+            fflush(stdout);
           } break;
           case 3: {
-            if (assumeFail && totalSize >= 32) printf(",fail");
-            else {
-                rv = test<bdlma::SequentialAllocator>();
-                printf(",%0.0lf", 100.0 * rv / firstRV);
-            }
+            rv = childTest<bdlma::SequentialAllocator>();
+            if (rv != -1.0) printf(",%0.0lf", 100.0 * rv / firstRV);
+            else printf(",fail");
+            fflush(stdout);
           } break;
           case 4: {
-            rv = test<bdlma::Multipool>();
+            rv = childTest<bdlma::Multipool>();
             printf(",%0.0lf", 100.0 * rv / firstRV);
           } break;
           case 5: {
-            rv = test<bdlma::MultipoolAllocator>();
-            printf(",%0.0lf", 100.0 * rv / firstRV);
+            rv = childTest<bdlma::MultipoolAllocator>();
+            if (rv != -1.0) printf(",%0.0lf", 100.0 * rv / firstRV);
+            else printf(",fail");
+            fflush(stdout);
           } break;
           case 6: {
-            if (assumeFail && totalSize >= 32 && blockSize >= 13) {
-                printf(",fail");
-            }
-            else {
-                rv = test<bdlma::Multipool, bdlma::SequentialAllocator>();
-                printf(",%0.0lf", 100.0 * rv / firstRV);
-            }
+            rv = childTest<bdlma::Multipool, bdlma::SequentialAllocator>();
+            if (rv != -1.0) printf(",%0.0lf", 100.0 * rv / firstRV);
+            else printf(",fail");
+            fflush(stdout);
           } break;
           case 7: {
-            if (assumeFail && totalSize >= 32 && blockSize >= 13) {
-                printf(",fail");
-            }
-            else {
-                rv = test<bdlma::MultipoolAllocator,
-                          bdlma::SequentialAllocator>();
-                printf(",%0.0lf", 100.0 * rv / firstRV);
-            }
+            rv = childTest<bdlma::MultipoolAllocator,
+                           bdlma::SequentialAllocator>();
+            if (rv != -1.0) printf(",%0.0lf", 100.0 * rv / firstRV);
+            else printf(",fail");
+            fflush(stdout);
           } break;
         }
     }
     printf("\n");
     return 0;
 }
-
-// ----------------------------------------------------------------------------
-// Copyright 2015 Bloomberg Finance L.P.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-// ----------------------------- END-OF-FILE ----------------------------------
