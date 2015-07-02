@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+SZ=20
+
+for ((s=4;s<=SZ-4;++s)); do
+  reference=0
+  fname=growth-$SZ-$s
+  case $fname in *-?) fname=growth-$SZ-0$s;; esac
+  >$fname
+  for i in 1 5 9 ; do
+    for ((j=1;j<=14;++j)); do 
+      if [ $j = 1 ]; then reference=0; fi
+      echo ../shgrowth $SZ $s $i $j $reference
+      out=`../shgrowth $SZ $s $i $j $reference`
+      result=$?
+      if [ $result != 0 ]; then 
+        out='(failed), (N/A), none'
+      fi
+      if [ $j = 1 ]; then
+        if [ $result = 0 ]; then
+          reference=${out%%,*};
+        else
+          reference=10000
+        fi
+      fi
+      echo "$out"
+      printf "%s\n" "$out" >> $fname
+  done; done
+done
