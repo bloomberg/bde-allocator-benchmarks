@@ -1,0 +1,24 @@
+cl /nologo /MT /TP /Oi /GR \
+  /D_AMD64_ /DBDE_BUILD_TARGET_EXC /DBDE_BUILD_TARGET_MT \
+  /DBDE_BUILD_TARGET_OPT /DBDE_BUILD_TARGET_CPP11 \
+  /D_CRT_SECURE_NO_DEPRECATE /D_SCL_SECURE_NO_DEPRECATE /DNOMINMAX /DNOGDI \
+  /we4715 /wd4661 /we4150 /wd4510 /wd4610 \
+  /D_WIN32_WINNT=0x0502 /DWINVER=0x0502 \
+  /FS /EHsc /Zi /Ox /Ot /favor:INTEL64 /Oi /D"NDEBUG" /GS- /GT /Gs0 /GF \
+  /arch:AVX /volatile:iso /DBSLS_IDENT_OFF /DBDE_OMIT_INTERNAL_DEPRECATED \
+  /IE:\\bdebench\\include\\bdl \
+  /IE:\\bdebench\\include\\bsl \
+  /IE:\\VS2015RC\\VC\\INCLUDE \
+  /IE:\\VS2015RC\\VC\\ATLMFC\\INCLUDE \
+  /IE:\\VS2015RC\\VC\\include \
+  "/Ic:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.10056.0\\ucrt" \
+  "/Ic:\\Program Files (x86)\\Windows Kits\\8.1\\include\\shared" \
+  "/Ic:\\Program Files (x86)\\Windows Kits\\8.1\\include\\um" \
+  "/Ic:\\Program Files (x86)\\Windows Kits\\8.1\\include\\winrt" \
+  shgrowth-msvs.cc \
+  /link E:\\bdebench\\lib\\bdl.lib \
+        E:\\bdebench\\lib\\bsl.lib \
+ '/LIBPATH:E:\\VS2015RC\\VC\\lib\\amd64' \
+ '/LIBPATH:c:\\Program Files (x86)\\Windows Kits\\8.1\\Lib\\winv6.3\\um\\x64' \
+ '/LIBPATH:c:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.10056.0\\ucrt\\x64'
+

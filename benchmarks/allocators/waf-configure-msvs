@@ -1,0 +1,12 @@
+
+# note: must patch bde-tools/lib/python/bdebuild/waf/configurehelper.py : 
+#
+# - if self.ctx.options.msvc_runtime_type == 'dynamic':
+# + if 0: # if self.ctx.options.msvc_runtime_type == 'dynamic':
+#
+# and patch bde-tools/etc/default.opts for windows-*-*-*-cl-19.00
+
+export PREFIX=e:\\bdebench 
+export CXXFLAGS='/MT /Oi /GR /D_AMD64_ /DBDE_BUILD_TARGET_MT /Ox /Ot /favor:INTEL64 /arch:AVX /volatile:iso /EHsc /GS- /Gs1 /GF /Zi'
+python e:\\bde-tools\\bin\\waf configure -v --abi-bits=64 --cpp11 --build-type release --assert-level=none --library-type=static
+python e:\\bde-tools\\bin\\waf build install
