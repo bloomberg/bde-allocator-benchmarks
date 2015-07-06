@@ -52,7 +52,6 @@ namespace bsl
     using native_std::getchar;
     using native_std::putc;
     using native_std::putchar;
-    using native_std::gets;
     using native_std::perror;
     using native_std::printf;
     using native_std::puts;
