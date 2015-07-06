@@ -1,0 +1,128 @@
+
+nS = 1	iL = 10000000	aC = 0	cC = 0	it = 1
+
+minLen = 10000000, maxLen = 10000000, diff = 0
+
+nS = 1	iL = 10000000	aC = 100000000	cC = 0	it = 1
+
+minLen = 10000000, maxLen = 10000000, diff = 0
+
+nS = 1	iL = 10000000	aC = 0	cC = 0	it = 1
+
+minLen = 10000000, maxLen = 10000000, diff = 0
+
+nS = 1	iL = 10000000	aC = 100000000	cC = 0	it = 1
+
+minLen = 10000000, maxLen = 10000000, diff = 0
+
+nS = 10	iL = 1000000	aC = 0	cC = 0	it = 1
+
+minLen = 1000000, maxLen = 1000000, diff = 0
+
+nS = 10	iL = 1000000	aC = 10000000	cC = 0	it = 1
+
+minLen = 1000000, maxLen = 1000000, diff = 0
+
+nS = 10	iL = 1000000	aC = 0	cC = 0	it = 1
+
+minLen = 1000000, maxLen = 1000000, diff = 0
+
+nS = 10	iL = 1000000	aC = 10000000	cC = 0	it = 1
+
+minLen = 1000000, maxLen = 1000000, diff = 0
+
+nS = 100	iL = 100000	aC = 0	cC = 0	it = 1
+
+minLen = 100000, maxLen = 100000, diff = 0
+
+nS = 100	iL = 100000	aC = 1000000	cC = 0	it = 1
+
+minLen = 100000, maxLen = 100000, diff = 0
+
+nS = 100	iL = 100000	aC = 0	cC = 0	it = 1
+
+minLen = 100000, maxLen = 100000, diff = 0
+
+nS = 100	iL = 100000	aC = 1000000	cC = 0	it = 1
+
+minLen = 100000, maxLen = 100000, diff = 0
+
+nS = 1000	iL = 10000	aC = 0	cC = 0	it = 1
+
+minLen = 10000, maxLen = 10000, diff = 0
+
+nS = 1000	iL = 10000	aC = 100000	cC = 0	it = 1
+
+minLen = 10000, maxLen = 10000, diff = 0
+
+nS = 1000	iL = 10000	aC = 0	cC = 0	it = 1
+
+minLen = 10000, maxLen = 10000, diff = 0
+
+nS = 1000	iL = 10000	aC = 100000	cC = 0	it = 1
+
+minLen = 10000, maxLen = 10000, diff = 0
+
+nS = 10000	iL = 1000	aC = 0	cC = 0	it = 1
+
+minLen = 1000, maxLen = 1000, diff = 0
+
+nS = 10000	iL = 1000	aC = 10000	cC = 0	it = 1
+
+minLen = 1000, maxLen = 1000, diff = 0
+
+nS = 10000	iL = 1000	aC = 0	cC = 0	it = 1
+
+minLen = 1000, maxLen = 1000, diff = 0
+
+nS = 10000	iL = 1000	aC = 10000	cC = 0	it = 1
+
+minLen = 1000, maxLen = 1000, diff = 0
+
+nS = 100000	iL = 100	aC = 0	cC = 0	it = 1
+
+minLen = 100, maxLen = 100, diff = 0
+
+nS = 100000	iL = 100	aC = 1000	cC = 0	it = 1
+
+minLen = 100, maxLen = 100, diff = 0
+
+nS = 100000	iL = 100	aC = 0	cC = 0	it = 1
+
+minLen = 100, maxLen = 100, diff = 0
+
+nS = 100000	iL = 100	aC = 1000	cC = 0	it = 1
+
+minLen = 100, maxLen = 100, diff = 0
+
+nS = 1000000	iL = 10	aC = 0	cC = 0	it = 1
+
+minLen = 10, maxLen = 10, diff = 0
+
+nS = 1000000	iL = 10	aC = 100	cC = 0	it = 1
+
+minLen = 10, maxLen = 10, diff = 0
+
+nS = 1000000	iL = 10	aC = 0	cC = 0	it = 1
+
+minLen = 10, maxLen = 10, diff = 0
+
+nS = 1000000	iL = 10	aC = 100	cC = 0	it = 1
+
+minLen = 10, maxLen = 10, diff = 0
+
+nS = 10000000	iL = 1	aC = 0	cC = 0	it = 1
+
+minLen = 1, maxLen = 1, diff = 0
+
+nS = 10000000	iL = 1	aC = 10	cC = 0	it = 1
+
+minLen = 1, maxLen = 1, diff = 0
+
+nS = 10000000	iL = 1	aC = 0	cC = 0	it = 1
+
+minLen = 1, maxLen = 1, diff = 0
+
+nS = 10000000	iL = 1	aC = 10	cC = 0	it = 1
+
+minLen = 1, maxLen = 1, diff = 0
