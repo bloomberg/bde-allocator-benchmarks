@@ -1,0 +1,2 @@
+echo 'make STDLIB= AR=gcc-ar RANLIB=gcc-ranlib CC=gcc CXX=g++ LTO='-mcpu=power7 -D__linux'' "$@"
+make STDLIB= AR=gcc-ar RANLIB=gcc-ranlib CC=gcc CXX=g++ LTO='-mcpu=power7 -D__linux' "$@"
