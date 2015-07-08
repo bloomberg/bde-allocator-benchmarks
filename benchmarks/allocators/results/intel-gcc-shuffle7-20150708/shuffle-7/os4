@@ -1,0 +1,192 @@
+
+nS = 1	iL = 10000000	aC = 0	cC = 40000000	it = 1
+
+minLen = 10000000, maxLen = 10000000, diff = 0
+3.25user 0.17system 0:03.42elapsed 100%CPU (0avgtext+0avgdata 315932maxresident)k
+0inputs+0outputs (0major+186592minor)pagefaults 0swaps
+
+nS = 1	iL = 10000000	aC = 100000000	cC = 40000000	it = 1
+
+minLen = 10000000, maxLen = 10000000, diff = 0
+3.78user 0.18system 0:03.96elapsed 100%CPU (0avgtext+0avgdata 315776maxresident)k
+0inputs+0outputs (0major+214093minor)pagefaults 0swaps
+
+nS = 1	iL = 10000000	aC = 0	cC = -40000000	it = 1
+
+minLen = 10000000, maxLen = 10000000, diff = 0
+3.21user 0.18system 0:03.40elapsed 100%CPU (0avgtext+0avgdata 315760maxresident)k
+0inputs+0outputs (0major+184612minor)pagefaults 0swaps
+
+nS = 1	iL = 10000000	aC = 100000000	cC = -40000000	it = 1
+
+minLen = 10000000, maxLen = 10000000, diff = 0
+3.80user 0.18system 0:03.98elapsed 100%CPU (0avgtext+0avgdata 315768maxresident)k
+0inputs+0outputs (0major+234535minor)pagefaults 0swaps
+
+nS = 10	iL = 1000000	aC = 0	cC = 40000000	it = 1
+
+minLen = 998091, maxLen = 1002966, diff = 4875
+4.30user 0.38system 0:04.69elapsed 99%CPU (0avgtext+0avgdata 315828maxresident)k
+0inputs+0outputs (0major+216543minor)pagefaults 0swaps
+
+nS = 10	iL = 1000000	aC = 10000000	cC = 40000000	it = 1
+
+minLen = 998091, maxLen = 1002966, diff = 4875
+13.64user 0.28system 0:13.91elapsed 100%CPU (0avgtext+0avgdata 315776maxresident)k
+0inputs+0outputs (0major+529293minor)pagefaults 0swaps
+
+nS = 10	iL = 1000000	aC = 0	cC = -40000000	it = 1
+
+minLen = 998091, maxLen = 1002966, diff = 4875
+4.22user 0.21system 0:04.43elapsed 100%CPU (0avgtext+0avgdata 315768maxresident)k
+0inputs+0outputs (0major+226355minor)pagefaults 0swaps
+
+nS = 10	iL = 1000000	aC = 10000000	cC = -40000000	it = 1
+
+minLen = 998091, maxLen = 1002966, diff = 4875
+4.83user 0.19system 0:05.03elapsed 100%CPU (0avgtext+0avgdata 315776maxresident)k
+0inputs+0outputs (0major+270003minor)pagefaults 0swaps
+
+nS = 100	iL = 100000	aC = 0	cC = 40000000	it = 1
+
+minLen = 98767, maxLen = 101983, diff = 3216
+4.72user 0.19system 0:04.91elapsed 99%CPU (0avgtext+0avgdata 315780maxresident)k
+0inputs+0outputs (0major+255562minor)pagefaults 0swaps
+
+nS = 100	iL = 100000	aC = 1000000	cC = 40000000	it = 1
+
+minLen = 98767, maxLen = 101983, diff = 3216
+8.85user 0.22system 0:09.07elapsed 100%CPU (0avgtext+0avgdata 315668maxresident)k
+0inputs+0outputs (0major+445787minor)pagefaults 0swaps
+
+nS = 100	iL = 100000	aC = 0	cC = -40000000	it = 1
+
+minLen = 98767, maxLen = 101983, diff = 3216
+4.74user 0.20system 0:04.94elapsed 100%CPU (0avgtext+0avgdata 315732maxresident)k
+0inputs+0outputs (0major+265004minor)pagefaults 0swaps
+
+nS = 100	iL = 100000	aC = 1000000	cC = -40000000	it = 1
+
+minLen = 98767, maxLen = 101983, diff = 3216
+5.18user 0.18system 0:05.37elapsed 99%CPU (0avgtext+0avgdata 315672maxresident)k
+0inputs+0outputs (0major+286778minor)pagefaults 0swaps
+
+nS = 1000	iL = 10000	aC = 0	cC = 40000000	it = 1
+
+minLen = 9352, maxLen = 10691, diff = 1339
+7.20user 0.27system 0:07.47elapsed 100%CPU (0avgtext+0avgdata 315928maxresident)k
+0inputs+0outputs (0major+323761minor)pagefaults 0swaps
+
+nS = 1000	iL = 10000	aC = 100000	cC = 40000000	it = 1
+
+minLen = 9352, maxLen = 10691, diff = 1339
+11.45user 0.37system 0:11.83elapsed 99%CPU (0avgtext+0avgdata 315704maxresident)k
+0inputs+0outputs (0major+464306minor)pagefaults 0swaps
+
+nS = 1000	iL = 10000	aC = 0	cC = -40000000	it = 1
+
+minLen = 9352, maxLen = 10691, diff = 1339
+7.24user 0.23system 0:07.47elapsed 100%CPU (0avgtext+0avgdata 315844maxresident)k
+0inputs+0outputs (0major+323877minor)pagefaults 0swaps
+
+nS = 1000	iL = 10000	aC = 100000	cC = -40000000	it = 1
+
+minLen = 9352, maxLen = 10691, diff = 1339
+7.47user 0.28system 0:07.76elapsed 99%CPU (0avgtext+0avgdata 315856maxresident)k
+0inputs+0outputs (0major+325189minor)pagefaults 0swaps
+
+nS = 10000	iL = 1000	aC = 0	cC = 40000000	it = 1
+
+minLen = 755, maxLen = 1278, diff = 523
+9.48user 0.29system 0:09.77elapsed 99%CPU (0avgtext+0avgdata 316164maxresident)k
+0inputs+0outputs (0major+407742minor)pagefaults 0swaps
+
+nS = 10000	iL = 1000	aC = 10000	cC = 40000000	it = 1
+
+minLen = 755, maxLen = 1278, diff = 523
+12.52user 0.35system 0:12.86elapsed 100%CPU (0avgtext+0avgdata 316164maxresident)k
+0inputs+0outputs (0major+485399minor)pagefaults 0swaps
+
+nS = 10000	iL = 1000	aC = 0	cC = -40000000	it = 1
+
+minLen = 755, maxLen = 1278, diff = 523
+9.42user 0.39system 0:09.81elapsed 99%CPU (0avgtext+0avgdata 316324maxresident)k
+0inputs+0outputs (0major+402950minor)pagefaults 0swaps
+
+nS = 10000	iL = 1000	aC = 10000	cC = -40000000	it = 1
+
+minLen = 755, maxLen = 1278, diff = 523
+9.80user 0.36system 0:10.17elapsed 100%CPU (0avgtext+0avgdata 316216maxresident)k
+0inputs+0outputs (0major+412571minor)pagefaults 0swaps
+
+nS = 100000	iL = 100	aC = 0	cC = 40000000	it = 1
+
+minLen = 5, maxLen = 189, diff = 184
+16.21user 0.71system 0:16.93elapsed 99%CPU (0avgtext+0avgdata 319472maxresident)k
+0inputs+0outputs (0major+658054minor)pagefaults 0swaps
+
+nS = 100000	iL = 100	aC = 1000	cC = 40000000	it = 1
+
+minLen = 5, maxLen = 189, diff = 184
+17.60user 0.32system 0:17.93elapsed 99%CPU (0avgtext+0avgdata 319536maxresident)k
+0inputs+0outputs (0major+608518minor)pagefaults 0swaps
+
+nS = 100000	iL = 100	aC = 0	cC = -40000000	it = 1
+
+minLen = 5, maxLen = 189, diff = 184
+15.86user 0.32system 0:16.19elapsed 99%CPU (0avgtext+0avgdata 319560maxresident)k
+0inputs+0outputs (0major+607281minor)pagefaults 0swaps
+
+nS = 100000	iL = 100	aC = 1000	cC = -40000000	it = 1
+
+minLen = 5, maxLen = 189, diff = 184
+16.34user 0.35system 0:16.69elapsed 100%CPU (0avgtext+0avgdata 319472maxresident)k
+0inputs+0outputs (0major+611330minor)pagefaults 0swaps
+
+nS = 1000000	iL = 10	aC = 0	cC = 40000000	it = 1
+
+minLen = 0, maxLen = 35, diff = 35
+17.19user 0.41system 0:17.60elapsed 100%CPU (0avgtext+0avgdata 354708maxresident)k
+0inputs+0outputs (0major+666566minor)pagefaults 0swaps
+
+nS = 1000000	iL = 10	aC = 100	cC = 40000000	it = 1
+
+minLen = 0, maxLen = 35, diff = 35
+18.87user 0.35system 0:19.22elapsed 100%CPU (0avgtext+0avgdata 354688maxresident)k
+0inputs+0outputs (0major+674744minor)pagefaults 0swaps
+
+nS = 1000000	iL = 10	aC = 0	cC = -40000000	it = 1
+
+minLen = 0, maxLen = 35, diff = 35
+17.75user 0.40system 0:18.15elapsed 100%CPU (0avgtext+0avgdata 354628maxresident)k
+0inputs+0outputs (0major+678828minor)pagefaults 0swaps
+
+nS = 1000000	iL = 10	aC = 100	cC = -40000000	it = 1
+
+minLen = 0, maxLen = 35, diff = 35
+17.75user 0.41system 0:18.16elapsed 100%CPU (0avgtext+0avgdata 354712maxresident)k
+0inputs+0outputs (0major+681194minor)pagefaults 0swaps
+
+nS = 10000000	iL = 1	aC = 0	cC = 40000000	it = 1
+
+minLen = 0, maxLen = 5, diff = 5
+20.94user 0.77system 0:21.72elapsed 99%CPU (0avgtext+0avgdata 706264maxresident)k
+0inputs+0outputs (0major+1276131minor)pagefaults 0swaps
+
+nS = 10000000	iL = 1	aC = 10	cC = 40000000	it = 1
+
+minLen = 0, maxLen = 5, diff = 5
+22.18user 0.87system 0:23.04elapsed 100%CPU (0avgtext+0avgdata 706164maxresident)k
+0inputs+0outputs (0major+1370002minor)pagefaults 0swaps
+
+nS = 10000000	iL = 1	aC = 0	cC = -40000000	it = 1
+
+minLen = 0, maxLen = 5, diff = 5
+20.85user 0.80system 0:21.65elapsed 100%CPU (0avgtext+0avgdata 706324maxresident)k
+0inputs+0outputs (0major+1292217minor)pagefaults 0swaps
+
+nS = 10000000	iL = 1	aC = 10	cC = -40000000	it = 1
+
+minLen = 0, maxLen = 5, diff = 5
+21.06user 0.80system 0:21.86elapsed 100%CPU (0avgtext+0avgdata 706264maxresident)k
+0inputs+0outputs (0major+1284173minor)pagefaults 0swaps
