@@ -6,59 +6,59 @@
 
 
 
-time  ../../locality-AS1   -10    10   0   +5  1
-time  ../../locality-AS1   -10    10     256   +5  1
-time  ../../locality-AS1   -10    10   0   -5  1
-time  ../../locality-AS1   -10    10     256   -5  1
+time  ../../$1   -10    10   0   +5  1
+time  ../../$1   -10    10     256   +5  1
+time  ../../$1   -10    10   0   -5  1
+time  ../../$1   -10    10     256   -5  1
 
-time  ../../locality-AS1   -10     9   0   +5  1
-time  ../../locality-AS1   -10     9     256   +5  1
-time  ../../locality-AS1   -10     9   0   -5  1
-time  ../../locality-AS1   -10     9     256   -5  1
+time  ../../$1   -10     9   0   +5  1
+time  ../../$1   -10     9     256   +5  1
+time  ../../$1   -10     9   0   -5  1
+time  ../../$1   -10     9     256   -5  1
 
-time  ../../locality-AS1   -10     8   0   +5  1
-time  ../../locality-AS1   -10     8     256   +5  1
-time  ../../locality-AS1   -10     8   0   -5  1
-time  ../../locality-AS1   -10     8     256   -5  1
+time  ../../$1   -10     8   0   +5  1
+time  ../../$1   -10     8     256   +5  1
+time  ../../$1   -10     8   0   -5  1
+time  ../../$1   -10     8     256   -5  1
 
-time  ../../locality-AS1   -10     7   0   +5  1
-time  ../../locality-AS1   -10     7     256   +5  1
-time  ../../locality-AS1   -10     7   0   -5  1
-time  ../../locality-AS1   -10     7     256   -5  1
+time  ../../$1   -10     7   0   +5  1
+time  ../../$1   -10     7     256   +5  1
+time  ../../$1   -10     7   0   -5  1
+time  ../../$1   -10     7     256   -5  1
 
-time  ../../locality-AS1   -10     6   0   +5  1
-time  ../../locality-AS1   -10     6     256   +5  1
-time  ../../locality-AS1   -10     6   0   -5  1
-time  ../../locality-AS1   -10     6     256   -5  1
+time  ../../$1   -10     6   0   +5  1
+time  ../../$1   -10     6     256   +5  1
+time  ../../$1   -10     6   0   -5  1
+time  ../../$1   -10     6     256   -5  1
 
-time  ../../locality-AS1   -10     5   0   +5  1
-time  ../../locality-AS1   -10     5     256   +5  1
-time  ../../locality-AS1   -10     5   0   -5  1
-time  ../../locality-AS1   -10     5     256   -5  1
+time  ../../$1   -10     5   0   +5  1
+time  ../../$1   -10     5     256   +5  1
+time  ../../$1   -10     5   0   -5  1
+time  ../../$1   -10     5     256   -5  1
 
-time  ../../locality-AS1   -10     4   0   +5  1
-time  ../../locality-AS1   -10     4     256   +5  1
-time  ../../locality-AS1   -10     4   0   -5  1
-time  ../../locality-AS1   -10     4     256   -5  1
+time  ../../$1   -10     4   0   +5  1
+time  ../../$1   -10     4     256   +5  1
+time  ../../$1   -10     4   0   -5  1
+time  ../../$1   -10     4     256   -5  1
 
-time  ../../locality-AS1   -10     3   0   +5  1
-time  ../../locality-AS1   -10     3     256   +5  1
-time  ../../locality-AS1   -10     3   0   -5  1
-time  ../../locality-AS1   -10     3     256   -5  1
+time  ../../$1   -10     3   0   +5  1
+time  ../../$1   -10     3     256   +5  1
+time  ../../$1   -10     3   0   -5  1
+time  ../../$1   -10     3     256   -5  1
 
-time  ../../locality-AS1   -10     2   0   +5  1
-time  ../../locality-AS1   -10     2     256   +5  1
-time  ../../locality-AS1   -10     2   0   -5  1
-time  ../../locality-AS1   -10     2     256   -5  1
+time  ../../$1   -10     2   0   +5  1
+time  ../../$1   -10     2     256   +5  1
+time  ../../$1   -10     2   0   -5  1
+time  ../../$1   -10     2     256   -5  1
 
-time  ../../locality-AS1   -10     1   0   +5  1
-time  ../../locality-AS1   -10     1     256   +5  1
-time  ../../locality-AS1   -10     1   0   -5  1
-time  ../../locality-AS1   -10     1     256   -5  1
+time  ../../$1   -10     1   0   +5  1
+time  ../../$1   -10     1     256   +5  1
+time  ../../$1   -10     1   0   -5  1
+time  ../../$1   -10     1     256   -5  1
 
-time  ../../locality-AS1   -10     0   0   +5  1
-time  ../../locality-AS1   -10     0     256   +5  1
-time  ../../locality-AS1   -10     0   0   -5  1
-time  ../../locality-AS1   -10     0     256   -5  1
+time  ../../$1   -10     0   0   +5  1
+time  ../../$1   -10     0     256   +5  1
+time  ../../$1   -10     0   0   -5  1
+time  ../../$1   -10     0     256   -5  1
 
 

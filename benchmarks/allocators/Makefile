@@ -70,7 +70,7 @@ build: $(BINARIES)
 $(BINARIES): bde-tag
 
 OUTPUT =  results/*-result results/growth-*-* \
-    results/shuffle results/schedule
+    results/shuffle results/schedule-AS1 results/schedule-AS7
 
 clean:
 	rm -rf $(BINARIES) bde-tag $(BSLSRC)/build growth-*-* *-result
@@ -120,7 +120,8 @@ zation: zation.cc
 tention: tention.cc
 	$(CXX) -o $@ $(CXXFLAGS_LOCAL) $< $(LDFLAGS_LOCAL)
 
-run: run-locality run-zation run-tention run-growth run-shuffle run-schedule
+run: run-locality run-zation run-tention run-growth \
+     run-shuffle run-schedule-AS1 run-schedule-AS7
 
 run-growth: growth
 	@echo With GROWTH_SIZE 20 this may take a full day to complete:
@@ -175,12 +176,21 @@ run-shuffle: locality-AS1
     done ; \
     )
 
-run-schedule: locality-AS1
+run-schedule-AS1: locality-AS1
 	( \
-    mkdir -p results/schedule && cd results/schedule && \
+    mkdir -p results/schedule-AS1 && cd results/schedule-AS1 && \
     for i in ../../test-schedule-scripts/z*; do \
         o=$${i##*/} ; \
-        $$i 2>&1 | tee o$${o} ; \
+        $$i locality-AS1 2>&1 | tee o$${o} ; \
+    done ; \
+    )
+
+run-schedule-AS7: locality-AS7
+	( \
+    mkdir -p results/schedule-AS7 && cd results/schedule-AS7 && \
+    for i in ../../test-schedule-scripts/z*; do \
+        o=$${i##*/} ; \
+        $$i locality-AS7 2>&1 | tee o$${o} ; \
     done ; \
     )
 

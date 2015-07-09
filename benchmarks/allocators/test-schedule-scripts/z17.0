@@ -7,94 +7,94 @@
 
 
 
-time  ../../locality-AS1   -17    17   0   +5  1
-time  ../../locality-AS1   -17    17     256   +5  1
-time  ../../locality-AS1   -17    17   0   -5  1
-time  ../../locality-AS1   -17    17     256   -5  1
+time  ../../$1   -17    17   0   +5  1
+time  ../../$1   -17    17     256   +5  1
+time  ../../$1   -17    17   0   -5  1
+time  ../../$1   -17    17     256   -5  1
 
-time  ../../locality-AS1   -17    16   0   +5  1
-time  ../../locality-AS1   -17    16     256   +5  1
-time  ../../locality-AS1   -17    16   0   -5  1
-time  ../../locality-AS1   -17    16     256   -5  1
+time  ../../$1   -17    16   0   +5  1
+time  ../../$1   -17    16     256   +5  1
+time  ../../$1   -17    16   0   -5  1
+time  ../../$1   -17    16     256   -5  1
 
-time  ../../locality-AS1   -17    15   0   +5  1
-time  ../../locality-AS1   -17    15     256   +5  1
-time  ../../locality-AS1   -17    15   0   -5  1
-time  ../../locality-AS1   -17    15     256   -5  1
+time  ../../$1   -17    15   0   +5  1
+time  ../../$1   -17    15     256   +5  1
+time  ../../$1   -17    15   0   -5  1
+time  ../../$1   -17    15     256   -5  1
 
-time  ../../locality-AS1   -17    14   0   +5  1
-time  ../../locality-AS1   -17    14     256   +5  1
-time  ../../locality-AS1   -17    14   0   -5  1
-time  ../../locality-AS1   -17    14     256   -5  1
+time  ../../$1   -17    14   0   +5  1
+time  ../../$1   -17    14     256   +5  1
+time  ../../$1   -17    14   0   -5  1
+time  ../../$1   -17    14     256   -5  1
 
-time  ../../locality-AS1   -17    13   0   +5  1
-time  ../../locality-AS1   -17    13     256   +5  1
-time  ../../locality-AS1   -17    13   0   -5  1
-time  ../../locality-AS1   -17    13     256   -5  1
+time  ../../$1   -17    13   0   +5  1
+time  ../../$1   -17    13     256   +5  1
+time  ../../$1   -17    13   0   -5  1
+time  ../../$1   -17    13     256   -5  1
 
-time  ../../locality-AS1   -17    12   0   +5  1
-time  ../../locality-AS1   -17    12     256   +5  1
-time  ../../locality-AS1   -17    12   0   -5  1
-time  ../../locality-AS1   -17    12     256   -5  1
+time  ../../$1   -17    12   0   +5  1
+time  ../../$1   -17    12     256   +5  1
+time  ../../$1   -17    12   0   -5  1
+time  ../../$1   -17    12     256   -5  1
 
-time  ../../locality-AS1   -17    11   0   +5  1
-time  ../../locality-AS1   -17    11     256   +5  1
-time  ../../locality-AS1   -17    11   0   -5  1
-time  ../../locality-AS1   -17    11     256   -5  1
+time  ../../$1   -17    11   0   +5  1
+time  ../../$1   -17    11     256   +5  1
+time  ../../$1   -17    11   0   -5  1
+time  ../../$1   -17    11     256   -5  1
 
-time  ../../locality-AS1   -17    10   0   +5  1
-time  ../../locality-AS1   -17    10     256   +5  1
-time  ../../locality-AS1   -17    10   0   -5  1
-time  ../../locality-AS1   -17    10     256   -5  1
+time  ../../$1   -17    10   0   +5  1
+time  ../../$1   -17    10     256   +5  1
+time  ../../$1   -17    10   0   -5  1
+time  ../../$1   -17    10     256   -5  1
 
-time  ../../locality-AS1   -17     9   0   +5  1
-time  ../../locality-AS1   -17     9     256   +5  1
-time  ../../locality-AS1   -17     9   0   -5  1
-time  ../../locality-AS1   -17     9     256   -5  1
+time  ../../$1   -17     9   0   +5  1
+time  ../../$1   -17     9     256   +5  1
+time  ../../$1   -17     9   0   -5  1
+time  ../../$1   -17     9     256   -5  1
 
-time  ../../locality-AS1   -17     8   0   +5  1
-time  ../../locality-AS1   -17     8     256   +5  1
-time  ../../locality-AS1   -17     8   0   -5  1
-time  ../../locality-AS1   -17     8     256   -5  1
+time  ../../$1   -17     8   0   +5  1
+time  ../../$1   -17     8     256   +5  1
+time  ../../$1   -17     8   0   -5  1
+time  ../../$1   -17     8     256   -5  1
 
-time  ../../locality-AS1   -17     7   0   +5  1
-time  ../../locality-AS1   -17     7     256   +5  1
-time  ../../locality-AS1   -17     7   0   -5  1
-time  ../../locality-AS1   -17     7     256   -5  1
+time  ../../$1   -17     7   0   +5  1
+time  ../../$1   -17     7     256   +5  1
+time  ../../$1   -17     7   0   -5  1
+time  ../../$1   -17     7     256   -5  1
 
-time  ../../locality-AS1   -17     6   0   +5  1
-time  ../../locality-AS1   -17     6     256   +5  1
-time  ../../locality-AS1   -17     6   0   -5  1
-time  ../../locality-AS1   -17     6     256   -5  1
+time  ../../$1   -17     6   0   +5  1
+time  ../../$1   -17     6     256   +5  1
+time  ../../$1   -17     6   0   -5  1
+time  ../../$1   -17     6     256   -5  1
 
-time  ../../locality-AS1   -17     5   0   +5  1
-time  ../../locality-AS1   -17     5     256   +5  1
-time  ../../locality-AS1   -17     5   0   -5  1
-time  ../../locality-AS1   -17     5     256   -5  1
+time  ../../$1   -17     5   0   +5  1
+time  ../../$1   -17     5     256   +5  1
+time  ../../$1   -17     5   0   -5  1
+time  ../../$1   -17     5     256   -5  1
 
-time  ../../locality-AS1   -17     4   0   +5  1
-time  ../../locality-AS1   -17     4     256   +5  1
-time  ../../locality-AS1   -17     4   0   -5  1
-time  ../../locality-AS1   -17     4     256   -5  1
+time  ../../$1   -17     4   0   +5  1
+time  ../../$1   -17     4     256   +5  1
+time  ../../$1   -17     4   0   -5  1
+time  ../../$1   -17     4     256   -5  1
 
-time  ../../locality-AS1   -17     3   0   +5  1
-time  ../../locality-AS1   -17     3     256   +5  1
-time  ../../locality-AS1   -17     3   0   -5  1
-time  ../../locality-AS1   -17     3     256   -5  1
+time  ../../$1   -17     3   0   +5  1
+time  ../../$1   -17     3     256   +5  1
+time  ../../$1   -17     3   0   -5  1
+time  ../../$1   -17     3     256   -5  1
 
-time  ../../locality-AS1   -17     2   0   +5  1
-time  ../../locality-AS1   -17     2     256   +5  1
-time  ../../locality-AS1   -17     2   0   -5  1
-time  ../../locality-AS1   -17     2     256   -5  1
+time  ../../$1   -17     2   0   +5  1
+time  ../../$1   -17     2     256   +5  1
+time  ../../$1   -17     2   0   -5  1
+time  ../../$1   -17     2     256   -5  1
 
-time  ../../locality-AS1   -17     1   0   +5  1
-time  ../../locality-AS1   -17     1     256   +5  1
-time  ../../locality-AS1   -17     1   0   -5  1
-time  ../../locality-AS1   -17     1     256   -5  1
+time  ../../$1   -17     1   0   +5  1
+time  ../../$1   -17     1     256   +5  1
+time  ../../$1   -17     1   0   -5  1
+time  ../../$1   -17     1     256   -5  1
 
-time  ../../locality-AS1   -17     0   0   +5  1
-time  ../../locality-AS1   -17     0     256   +5  1
-time  ../../locality-AS1   -17     0   0   -5  1
-time  ../../locality-AS1   -17     0     256   -5  1
+time  ../../$1   -17     0   0   +5  1
+time  ../../$1   -17     0     256   +5  1
+time  ../../$1   -17     0   0   -5  1
+time  ../../$1   -17     0     256   -5  1
 
 
