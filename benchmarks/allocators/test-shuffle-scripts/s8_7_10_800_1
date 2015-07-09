@@ -1,45 +1,45 @@
 # Problem size = 10^7
-# Read factor = 10
+# Read factor = 100
 # Churn percentage = 800%
-# iterations = 1
+# iterations = 100
 #
 #     987654321 987654321	987654321   0987654321
-time  ../../locality-AS1     1  10000000   0    +80000000  1
-time  ../../locality-AS1     1  10000000   100000000    +80000000  1
-time  ../../locality-AS1     1  10000000   0    -80000000  1
-time  ../../locality-AS1     1  10000000   100000000    -80000000  1
+time  ../../locality-AS1     1  10000000   0    +80000000  100
+time  ../../locality-AS1     1  10000000   100000000    +80000000  100
+time  ../../locality-AS1     1  10000000   0    -80000000  100
+time  ../../locality-AS1     1  10000000   100000000    -80000000  100
 
-time  ../../locality-AS1    10   1000000   0    +80000000  1
-time  ../../locality-AS1    10   1000000    10000000    +80000000  1
-time  ../../locality-AS1    10   1000000   0    -80000000  1
-time  ../../locality-AS1    10   1000000    10000000    -80000000  1
+time  ../../locality-AS1    10   1000000   0    +80000000  100
+time  ../../locality-AS1    10   1000000    10000000    +80000000  100
+time  ../../locality-AS1    10   1000000   0    -80000000  100
+time  ../../locality-AS1    10   1000000    10000000    -80000000  100
 
-time  ../../locality-AS1   100    100000   0    +80000000  1
-time  ../../locality-AS1   100    100000     1000000    +80000000  1
-time  ../../locality-AS1   100    100000   0    -80000000  1
-time  ../../locality-AS1   100    100000     1000000    -80000000  1
+time  ../../locality-AS1   100    100000   0    +80000000  100
+time  ../../locality-AS1   100    100000     1000000    +80000000  100
+time  ../../locality-AS1   100    100000   0    -80000000  100
+time  ../../locality-AS1   100    100000     1000000    -80000000  100
 
-time  ../../locality-AS1  1000 10000   0    +80000000  1
-time  ../../locality-AS1  1000 10000  100000    +80000000  1
-time  ../../locality-AS1  1000 10000   0    -80000000  1
-time  ../../locality-AS1  1000 10000  100000    -80000000  1
+time  ../../locality-AS1  1000 10000   0    +80000000  100
+time  ../../locality-AS1  1000 10000  100000    +80000000  100
+time  ../../locality-AS1  1000 10000   0    -80000000  100
+time  ../../locality-AS1  1000 10000  100000    -80000000  100
 
-time  ../../locality-AS1 10000  1000   0    +80000000  1
-time  ../../locality-AS1 10000  1000   10000    +80000000  1
-time  ../../locality-AS1 10000  1000   0    -80000000  1
-time  ../../locality-AS1 10000  1000   10000    -80000000  1
+time  ../../locality-AS1 10000  1000   0    +80000000  100
+time  ../../locality-AS1 10000  1000   10000    +80000000  100
+time  ../../locality-AS1 10000  1000   0    -80000000  100
+time  ../../locality-AS1 10000  1000   10000    -80000000  100
 
-time  ../../locality-AS1    100000   100   0    +80000000  1
-time  ../../locality-AS1    100000   100    1000    +80000000  1
-time  ../../locality-AS1    100000   100   0    -80000000  1
-time  ../../locality-AS1    100000   100    1000    -80000000  1
+time  ../../locality-AS1    100000   100   0    +80000000  100
+time  ../../locality-AS1    100000   100    1000    +80000000  100
+time  ../../locality-AS1    100000   100   0    -80000000  100
+time  ../../locality-AS1    100000   100    1000    -80000000  100
 
-time  ../../locality-AS1   1000000    10   0    +80000000  1
-time  ../../locality-AS1   1000000    10     100    +80000000  1
-time  ../../locality-AS1   1000000    10   0    -80000000  1
-time  ../../locality-AS1   1000000    10     100    -80000000  1
+time  ../../locality-AS1   1000000    10   0    +80000000  100
+time  ../../locality-AS1   1000000    10     100    +80000000  100
+time  ../../locality-AS1   1000000    10   0    -80000000  100
+time  ../../locality-AS1   1000000    10     100    -80000000  100
 
-time  ../../locality-AS1  10000000     1   0    +80000000  1
-time  ../../locality-AS1  10000000     1      10    +80000000  1
-time  ../../locality-AS1  10000000     1   0    -80000000  1
-time  ../../locality-AS1  10000000     1      10    -80000000  1
+time  ../../locality-AS1  10000000     1   0    +80000000  100
+time  ../../locality-AS1  10000000     1      10    +80000000  100
+time  ../../locality-AS1  10000000     1   0    -80000000  100
+time  ../../locality-AS1  10000000     1      10    -80000000  100
