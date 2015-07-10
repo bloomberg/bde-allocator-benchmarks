@@ -11,7 +11,7 @@ for ((s=4;s<=SZ-4;++s)); do
     for ((j=1;j<=14;++j)); do 
       if [ $j = 1 ]; then reference=0; fi
       echo ../shgrowth $SZ $s $i $j $reference
-      out=`../shgrowth $SZ $s $i $j $reference`
+      out=`wine ../shgrowth.exe $SZ $s $i $j $reference`
       result=$?
       if [ $result != 0 ]; then 
         out='(failed), (N/A), none'
