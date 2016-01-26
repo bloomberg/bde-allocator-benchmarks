@@ -12,10 +12,10 @@ TAG is 4 digits and 6 alpha characters, as follows
    | | ||| |
    | | ||| +- Allocate from:
    | | |||  AS1,2   ND: new/delete
-   | | |||  AS7,9   PD: multipool, destroy data normally
-   | | |||  AS8,10  PL: multipool/drop, leak to allocator, destroy allocator
    | | |||  AS3,5   MD: monotonic, destroy data normally
    | | |||  AS7,9   ML: monotonic/drop, leak to allocator, destroy allocator
+   | | |||  AS7,9   PD: multipool, destroy data normally
+   | | |||  AS8,10  PL: multipool/drop, leak to allocator, destroy allocator
    | | |||  AS11,13 XD: multipool/monotonic - multipool allocator obtains
    | | |||             storage from monotonic allocator, all destroyed in order
    | | |||  AS12,14 XL: multipool/monotonic - multipool allocator allocates
@@ -57,7 +57,7 @@ All lines of all files are tagged and merged into a file T:
 for F in growth-*-*; do grep -h . $F | (
   F1=${F#growth-}; X=${F1%-*}; N=${F#growth-??-};
   for S in V- H- VV VH HV HH; do for P in I S; do for B in C R;
-  do for M in ND PD PL MD ML XD XL; do read i; echo "$X$N$S$P$B$M, $i";
+  do for M in ND MD ML PD PL XD XL; do read i; echo "$X$N$S$P$B$M, $i";
   done; done; done; done; ) done >T
 
 T is re-ordered and split into files T-XXX for tables, one file for each
@@ -170,3 +170,8 @@ for i in T-???; do
         echo
     )  >$i-ASxSZA.csv ;
 done
+
+and
+
+$ for i in V- H- VV VH HV HH; do for j in I S; do cat T-$i$j-ASxSZA.csv;
+  done; done > growthA.csv
