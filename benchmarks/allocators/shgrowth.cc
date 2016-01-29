@@ -7,10 +7,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <memory.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+#ifndef _WIN32
+# include <unistd.h>
+# include <sys/types.h>
+# include <sys/wait.h>
+#endif
 
 #include <bsl_memory.h>
 #include <bslma_testallocator.h>
@@ -28,6 +30,9 @@
 #include <scoped_allocator>
 #include "allocont.h"
 
+#define DEBUG
+#define INT INT_HIDE
+
 using namespace BloombergLP;
 
 static const int max_problem_logsize = 30;
@@ -35,10 +40,12 @@ static const int max_problem_logsize = 30;
 void usage(char const* cmd, int result)
 {
     std::cerr <<
-"usage: " << cmd << " <size> <split> [<csv>]\n"
+"usage: " << cmd << " <size> <split> <ds> <as> <reference>\n"
 "    size:  log2 of total element count, 20 -> 1,000,000\n"
 "    split: log2 of container size, 10 -> 1,000\n"
-"    csv:   if present, produce CSV: <<time>, <description>...>\n"
+"    ds: [1..12]\n"
+"    as: [1..14]\n"
+"    reference: float, time of corresponding as=1 or as=8 run, or 0\n"
 "    Number of containers used is 2^(size - split)\n"
 "    1 <= size <= " << max_problem_logsize << ", 1 <= split <= size\n";
     exit(result);
@@ -149,14 +156,14 @@ void shuffle()
     // leak every fourth subsystem:
     for (int i = 0; i < subsystems; ++i)
         if (i & 3)
-	    delete system[i];
+            delete system[i];
 }
 
 template <typename Test>
 double measure(int mask, bool csv, double reference, Test test)
 {
-    if (mask & SA)
-        std::cout << std::endl;
+    // if (mask & SA)
+    //     std::cout << std::endl;
     if (!csv) {
         if (mask & SA) {
             print_datastruct(mask);
@@ -291,7 +298,7 @@ struct my_hash {
     using result_type = size_t;
     using argument_type = T;
     result_type operator()(T const& t) const
-        { return 1048583 * (1 + reinterpret_cast<unsigned long>(&t)); }
+        { return 1048583 * (1 + reinterpret_cast<ptrdiff_t>(&t)); }
 };
 template <typename T>
 struct my_equal {
@@ -305,11 +312,13 @@ template <
     typename MultiCont,
     typename PolyCont,
     typename Work>
-void apply_allocation_strategies(
+void apply_allocation_strategies(int as, double reference,
     int mask, int runs, int split, bool csv, Work work)
 {
-    double reference;
 
+switch(as)
+{
+case 1:
 // allocator: std::allocator, bound: compile-time
     reference = measure((SA|mask|CT), csv, 0.0,
         [runs,split,work]() {
@@ -319,6 +328,7 @@ void apply_allocation_strategies(
                     work(c,split);
                 }});
 
+break; case 2:
 // allocator: monotonic, bound: compile-time
     measure((MT|mask|CT), csv, reference,
         [runs,split,work]() {
@@ -329,6 +339,7 @@ void apply_allocation_strategies(
                     work(c, split);
                 }});
 
+break; case 3:
 // allocator: monotonic, bound: compile-time, drop
     measure((MTD|mask|CT), csv, reference,
         [runs,split,work]() {
@@ -340,6 +351,7 @@ void apply_allocation_strategies(
                 }});
 
 
+break; case 4:
 // allocator: multipool, bound: compile-time
     measure((PL|mask|CT), csv, reference,
         [runs,split,work]() {
@@ -350,6 +362,7 @@ void apply_allocation_strategies(
                     work(c, split);
                 }});
 
+break; case 5:
 // allocator: multipool, bound: compile-time, drop
     measure((PLD|mask|CT), csv, reference,
         [runs,split,work]() {
@@ -360,6 +373,7 @@ void apply_allocation_strategies(
                     work(*c, split);
                 }});
 
+break; case 6:
 // allocator: multipool/monotonic, bound: compile-time
     measure((PM|mask|CT), csv, reference,
         [runs,split,work]() {
@@ -371,6 +385,7 @@ void apply_allocation_strategies(
                     work(c, split);
                 }});
 
+break; case 7:
 // allocator: multipool/monotonic, bound: compile-time, drop monotonic
     measure((PMD|mask|CT), csv, reference,
         [runs,split,work]() {
@@ -384,6 +399,7 @@ void apply_allocation_strategies(
                 }});
 
 
+break; case 8:
 // allocator: newdelete, bound: run-time
     measure((SA|mask|RT), csv, reference,
         [runs,split,work]() {
@@ -394,6 +410,7 @@ void apply_allocation_strategies(
                     work(c, split);
                 }});
 
+break; case 9:
 // allocator: monotonic, bound: run-time
     measure((MT|mask|RT), csv, reference,
         [runs,split,work]() {
@@ -404,6 +421,7 @@ void apply_allocation_strategies(
                     work(c, split);
                 }});
 
+break; case 10:
 // allocator: monotonic, bound: run-time, drop
     measure((MTD|mask|RT), csv, reference,
         [runs,split,work]() {
@@ -414,6 +432,7 @@ void apply_allocation_strategies(
                     work(*c, split);
                 }});
 
+break; case 11:
 // allocator: multipool, bound: run-time
     measure((PL|mask|RT), csv, reference,
         [runs,split,work]() {
@@ -424,6 +443,7 @@ void apply_allocation_strategies(
                     work(c, split);
                 }});
 
+break; case 12:
 // allocator: multipool, bound: run-time, drop
     measure((PLD|mask|RT), csv, reference,
         [runs,split,work]() {
@@ -434,6 +454,7 @@ void apply_allocation_strategies(
                     work(*c, split);
                 }});
 
+break; case 13:
 // allocator: multipool/monotonic, bound: run-time
     measure((PM|mask|RT), csv, reference,
         [runs,split,work]() {
@@ -445,6 +466,7 @@ void apply_allocation_strategies(
                     work(c, split);
                 }});
 
+break; case 14:
 // allocator: multipool/monotonic, bound: run-time, drop monotonic
     measure((PMD|mask|RT), csv, reference,
         [runs,split,work]() {
@@ -457,12 +479,16 @@ void apply_allocation_strategies(
                     work(*c, split);
                 }});
 }
+}
 
-void apply_containers(int runs, int split, bool csv)
+void apply_containers(
+    int ds, int as, double reference, int runs, int split, bool csv)
 {
+switch(ds) {
+case 1:
     apply_allocation_strategies<
             std::vector<int>,monotonic::vector<int>,
-            multipool::vector<int>,poly::vector<int>>(
+            multipool::vector<int>,poly::vector<int>>(as, reference,
         VEC|INT, runs * 128, split, csv,
         [] (auto& c, int elems) {
             for (int elt: range{0, elems}) {
@@ -470,11 +496,12 @@ void apply_containers(int runs, int split, bool csv)
                 side_effect(&c.back(), 4);
         }});
 
+break; case 2:
     apply_allocation_strategies<
             std::vector<std::string>,
             monotonic::vector<monotonic::string>,
             multipool::vector<multipool::string>,
-            poly::vector<poly::string>>(
+            poly::vector<poly::string>>(as, reference,
         VEC|STR, runs * 128, split, csv,
         [] (auto& c, int elems) {
             for (int elt: range{0, elems}) {
@@ -482,31 +509,34 @@ void apply_containers(int runs, int split, bool csv)
                 side_effect(const_cast<char*>(c.back().data()), 4);
         }});
 
+break; case 3:
     apply_allocation_strategies<
             std::unordered_set<int>,monotonic::unordered_set<int>,
-            multipool::unordered_set<int>,poly::unordered_set<int>>(
+            multipool::unordered_set<int>,poly::unordered_set<int>>(as, reference,
         HASH|INT, runs * 128, split, csv,
         [] (auto& c, int elems) {
             for (int elt: range{0, elems})
                 c.emplace(elt);
         });
 
+break; case 4:
     apply_allocation_strategies<
             std::unordered_set<std::string>,
             monotonic::unordered_set<monotonic::string>,
             multipool::unordered_set<multipool::string>,
-            poly::unordered_set<poly::string>>(
+            poly::unordered_set<poly::string>>(as, reference,
         HASH|STR, runs * 128, split, csv,
         [] (auto& c, int elems) {
             for (int elt: range{0, elems})
                 c.emplace(sptr(), slen());
         });
 
+break; case 5:
     apply_allocation_strategies<
             std::vector<std::vector<int>>,
             monotonic::vector<monotonic::vector<int>>,
             multipool::vector<multipool::vector<int>>,
-            poly::vector<poly::vector<int>>>(
+            poly::vector<poly::vector<int>>>(as, reference,
         VECVEC|INT, runs, split, csv,
         [] (auto& c, int elems) {
             c.emplace_back(128, 1);
@@ -514,11 +544,12 @@ void apply_containers(int runs, int split, bool csv)
                 c.emplace_back(c.back());
         });
 
+break; case 6:
     apply_allocation_strategies<
             std::vector<std::vector<std::string>>,
             monotonic::vector<monotonic::vector<monotonic::string>>,
             multipool::vector<multipool::vector<multipool::string>>,
-            poly::vector<poly::vector<poly::string>>>(
+            poly::vector<poly::vector<poly::string>>>(as, reference,
         VECVEC|STR, runs, split, csv,
         [split] (auto& c, int elems) {
             typename std::decay<decltype(c)>::type::value_type s(
@@ -531,31 +562,35 @@ void apply_containers(int runs, int split, bool csv)
                 c.emplace_back(c.back());
         });
 
+break; case 7:
     apply_allocation_strategies<
             std::vector<std::unordered_set<int>>,
             monotonic::vector<monotonic::unordered_set<int>>,
             multipool::vector<multipool::unordered_set<int>>,
-            poly::vector<poly::unordered_set<int>>>(
+            poly::vector<poly::unordered_set<int>>>(as, reference,
         VECHASH|INT, runs, split, csv,
         [split] (auto& c, int elems) {
             int in[128]; std::generate(in, in+128, random_engine);
             typename std::decay<decltype(c)>::type::value_type s(
-                128, c.get_allocator());
+                c.get_allocator());
+            s.reserve(128);
             s.insert(in, in+128);
             c.push_back(std::move(s));
             for (int elt: range{0, split})
                 c.emplace_back(c.back());
         });
 
+break; case 8:
     apply_allocation_strategies<
             std::vector<std::unordered_set<std::string>>,
             monotonic::vector<monotonic::unordered_set<monotonic::string>>,
             multipool::vector<multipool::unordered_set<multipool::string>>,
-            poly::vector<poly::unordered_set<poly::string>>>(
+            poly::vector<poly::unordered_set<poly::string>>>(as, reference,
         VECHASH|STR, runs, split, csv,
         [split] (auto& c, int elems) {
             typename std::decay<decltype(c)>::type::value_type s(
-                128, c.get_allocator());
+                c.get_allocator());
+            s.reserve(128);
             for (int i : range{0,128})
                 s.emplace(sptr(), slen());
             c.push_back(std::move(s));
@@ -563,6 +598,7 @@ void apply_containers(int runs, int split, bool csv)
                 c.emplace_back(c.back());
         });
 
+break; case 9:
     apply_allocation_strategies<
             std::unordered_set<std::vector<int>,
                     my_hash<std::vector<int>>,
@@ -575,7 +611,7 @@ void apply_containers(int runs, int split, bool csv)
                     my_equal<multipool::vector<int>>>,
             poly::unordered_set<poly::vector<int>,
                     my_hash<poly::vector<int>>,
-                    my_equal<poly::vector<int>>>>(
+                    my_equal<poly::vector<int>>>>(as, reference,
         HASHVEC|INT, runs, split, csv,
         [split] (auto& c, int elems) {
             typename std::decay<decltype(c)>::type::key_type s(
@@ -588,6 +624,7 @@ void apply_containers(int runs, int split, bool csv)
                 c.emplace(*c.begin());
         });
 
+break; case 10:
     apply_allocation_strategies<
             std::unordered_set<std::vector<std::string>,
                 my_hash<std::vector<std::string>>,
@@ -600,7 +637,7 @@ void apply_containers(int runs, int split, bool csv)
                 my_equal<multipool::vector<multipool::string>>>,
             poly::unordered_set<poly::vector<poly::string>,
                 my_hash<poly::vector<poly::string>>,
-                my_equal<poly::vector<poly::string>>>>(
+                my_equal<poly::vector<poly::string>>>>(as, reference,
         HASHVEC|STR, runs, split, csv,
         [split] (auto& c, int elems) {
             typename std::decay<decltype(c)>::type::key_type s(
@@ -613,6 +650,7 @@ void apply_containers(int runs, int split, bool csv)
                 c.emplace(*c.begin());
         });
 
+break; case 11:
     apply_allocation_strategies<
             std::unordered_set<std::unordered_set<int>,
                     my_hash<std::unordered_set<int>>,
@@ -628,11 +666,12 @@ void apply_containers(int runs, int split, bool csv)
             poly::unordered_set<
                 poly::unordered_set<int>,
                     my_hash<poly::unordered_set<int>>,
-                    my_equal<poly::unordered_set<int>>>>(
+                    my_equal<poly::unordered_set<int>>>>(as, reference,
         HASHHASH|INT, runs, split, csv,
         [split] (auto& c, int elems) {
             typename std::decay<decltype(c)>::type::key_type s(
-                128, c.get_allocator());
+                c.get_allocator());
+            s.reserve(128);
             for (int i: range{0, 128})
                 s.emplace(random_engine());
             c.emplace(std::move(s));
@@ -640,6 +679,7 @@ void apply_containers(int runs, int split, bool csv)
                 c.emplace(*c.begin());
         });
 
+break; case 12:
     apply_allocation_strategies<
             std::unordered_set<std::unordered_set<std::string>,
                     my_hash<std::unordered_set<std::string>>,
@@ -655,32 +695,44 @@ void apply_containers(int runs, int split, bool csv)
             poly::unordered_set<
                 poly::unordered_set<poly::string>,
                     my_hash<poly::unordered_set<poly::string>>,
-                    my_equal<poly::unordered_set<poly::string>>>>(
+                    my_equal<poly::unordered_set<poly::string>>>>(as, reference,
         HASHHASH|STR, runs, split, csv,
         [split] (auto& c, int elems) {
             typename std::decay<decltype(c)>::type::key_type s(
-                128, c.get_allocator());
+                c.get_allocator());
+            s.reserve(128);
             for (int i: range{0, 128})
                 s.emplace(sptr(), slen());
             c.emplace(std::move(s));
             for (int elt: range{0, split})
                 c.emplace(*c.begin());
         });
+break;
+} // switch
 }
 
 
 int main(int ac, char** av)
 {
     std::ios::sync_with_stdio(false);
-    if (ac != 3 && ac != 4)
+    if (ac != 6)
         usage(*av, 1);
     int logsize = atoi(av[1]);
     int logsplit = atoi(av[2]);
+    int ds = atoi(av[3]);
+    int as = atoi(av[4]);
+    double reference = atof(av[5]);
     if (logsize < 1 || logsize > max_problem_logsize)
         usage(*av, 2);
     if (logsplit < 1 || logsplit > logsize)
         usage(*av, 3);
-    bool csv = (ac == 4);
+    if (ds < 1 || ds > 12)
+        usage(*av, 4);
+    if (as < 1 || as > 14)
+        usage(*av, 5);
+    if (reference < 0 || reference == 0 && (as != 1 && as != 8))
+        usage(*av, 6);
+    bool csv = true;
 
     if (!csv) {
         std::cout << "Total # of objects = 2^" << logsize
@@ -692,7 +744,7 @@ int main(int ac, char** av)
     int split = 1 << logsplit;
     int runs = size / split;
 
-    std::uniform_int_distribution<int> char_dist('!', '~');
+    std::uniform_int_distribution<int> char_dist((int)'!', (int)'~');
     for (char& c : trash)
         c = (char) char_dist(random_engine);
 
@@ -701,7 +753,7 @@ int main(int ac, char** av)
 
     std::cout << std::setprecision(3);
 
-    apply_containers(runs, split, csv);
+    apply_containers(ds, as, reference, runs, split, csv);
 
     return 0;
 }

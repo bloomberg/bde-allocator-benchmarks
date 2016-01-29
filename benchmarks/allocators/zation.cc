@@ -246,7 +246,9 @@ int main(int argc, char *argv[]) {
           } break;
           case 4: {
             rv = childTest<bdlma::Multipool>();
-            printf(",%0.0lf", 100.0 * rv / firstRV);
+            if (rv != -1.0) printf(",%0.0lf", 100.0 * rv / firstRV);
+            else printf(",fail");
+            fflush(stdout);
           } break;
           case 5: {
             rv = childTest<bdlma::MultipoolAllocator>();
